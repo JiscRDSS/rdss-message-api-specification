@@ -62,7 +62,8 @@
         "SourceID",
         "UPC",
         "URL",
-        "URN"
+        "URN",
+        "UUID"
       ]
     },
     "messageClass": {
@@ -227,7 +228,6 @@
         "dataset",
         "examPaper",
         "image",
-        "journal",
         "learningObject",
         "movingImage",
         "musicComposition",
@@ -244,7 +244,7 @@
         "unknown",
         "website",
         "workflow",
-        "equipment"
+        "informationPackage"
       ]
     },
     "storageStatus": {
