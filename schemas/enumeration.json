@@ -277,6 +277,28 @@
         "technicalInfo",
         "other" 
       ]
+    },
+    "apc": {
+      "enum": [
+        "paid",
+        "partiallyWaived",
+        "fullyWaived",
+        "notCharged",
+        "notRequired",
+        "unknown"
+      ]
+    },
+    "publicationVersion": {
+      "enum": [
+        "AO",
+        "SMUR",
+        "AM",
+        "P",
+        "VoR",
+        "CVoR",
+        "EVoR",
+        "NA"
+      ]
     }
   }
 }
