@@ -30,7 +30,12 @@
       "role": 1
     }
   ],
-  "objectDescription": "string",
+  "objectDescription": [
+    {
+      "descriptionValue": "string", 
+      "descriptionType": 1
+    }
+  ],
   "objectRights": {
     "rightsStatement": [
       "string"

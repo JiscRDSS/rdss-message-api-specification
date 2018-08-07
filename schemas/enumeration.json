@@ -266,6 +266,17 @@
         "uploadComplete",
         "uploadAborted"
       ]
+    },
+    "descriptionType": {
+      "enum": [
+        "abstract", 
+        "description", 
+        "methods", 
+        "seriesInformation",
+        "tableOfContents",
+        "technicalInfo",
+        "other" 
+      ]
     }
   }
 }
