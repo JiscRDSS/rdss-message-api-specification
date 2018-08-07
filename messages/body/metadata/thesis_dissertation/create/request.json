@@ -70,7 +70,7 @@
   "objectCategory": [
     "string"
   ],
-  "objectResourceType": 2,
+  "objectResourceType": 22,
   "objectValue": 1,
   "objectIdentifier": [
     {
@@ -173,11 +173,8 @@
         "storagePlatformCost": "string"
       }
     }
-  ],
-  "freeToRead": {
-    "start_date": "2006-05-05T00:00:00-05:00",
-    "end_date": "2014-12-05T00:00:00-05:00" 
-  },
+  ]
+  "language": "eng", 
   "coverage": {
     "geospatialCoverage": [
       {
@@ -210,17 +207,8 @@
     "temporalCoverageStart": "2012-06-13T00:00:00-05:00",
     "temporalCoverageEnd": "2018-01-02T00:00:00-05:00" 
   },
-  "language": [
-    "eng"
-  ], 
-  "apc": 1, 
-  "publicationVersion": 1,
-  "journal": {
-    "ISSN": "string", 
-    "fullTitle": "string", 
-    "journalVolume": "string", 
-    "firstPage": "string", 
-    "lastPage": "string", 
-    "journalIssue": "string"
-  }
+  "qualificationLevel": "string", 
+  "qualificationName": "string",
+  "yearOfAward": "string",
+  "thesisDissertationType": 1
 }

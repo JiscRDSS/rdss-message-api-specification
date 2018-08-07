@@ -299,6 +299,12 @@
         "EVoR",
         "NA"
       ]
+    },
+    "thesisDissertationType": {
+      "enum": [
+        "thesis",
+        "dissertation"
+      ]
     }
   }
 }
