@@ -20,7 +20,11 @@
           "minItems": 1
         },
         "objectDescription": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "type": "array", 
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/description"
+          }
         },
         "objectRights": {
           "$ref": "#/definitions/rights"
@@ -357,6 +361,24 @@
       "required": [
         "dateValue",
         "dateType"
+      ],
+      "additionalProperties": false
+    },
+    "description": {
+      "type": "object",
+      "properties": {
+        "descriptionValue": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "descriptionType": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 7
+        }
+      },
+      "required": [
+        "descriptionValue",
+        "descriptionType"
       ],
       "additionalProperties": false
     }

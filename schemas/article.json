@@ -1,0 +1,177 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/article.json/#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "article": {
+      "type": "object",
+      "properties": {
+        "objectUuid": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+        },
+        "objectTitle": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "objectPersonRole": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/personRole"
+          },
+          "minItems": 1
+        },
+        "objectDescription": {
+          "type": "array", 
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/description"
+          }
+        },
+        "objectRights": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/rights"
+        },
+        "objectDate": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/date"
+          },
+          "minItems": 1
+        },
+        "objectKeywords": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          }
+        },
+        "objectCategory": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          }
+        },
+        "objectResourceType": {
+          "type": "integer",
+          "enum": [2]
+        },
+        "objectValue": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "objectIdentifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/identifier"
+          },
+          "minItems": 1
+        },
+        "objectRelatedIdentifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/identifierRelationship"
+          }
+        },
+        "objectOrganisationRole": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/organisationRole"
+          },
+          "minItems": 1
+        },
+        "objectPreservationEvent": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/preservationEvent"
+          }
+        },
+        "objectFile": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/file"
+          }
+        },
+        "freeToRead": {
+          "$ref": "#/definitions/alifreetoread"
+        }, 
+        "coverage": {
+
+        },
+        "language": {
+
+        }, 
+        "apc": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        }, 
+        "publicationVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 8
+        }, 
+        "journal": {
+          "$ref": "#/definitions/journal"
+        }
+      },
+      "required": [
+        "objectUuid",
+        "objectTitle",
+        "objectPersonRole",
+        "objectDescription",
+        "objectRights",
+        "objectDate",
+        "objectResourceType",
+        "objectValue",
+        "objectIdentifier",
+        "objectOrganisationRole",
+        "language",
+        "publicationVersion"
+      ],
+      "additionalProperties": false
+    },
+    "alifreetoread": {
+      "type": "object",
+      "properties": {
+
+      }
+    },
+    "journal": {
+      "type": "object",
+      "properties": {
+        "ISSN": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "fullTitle": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "journalVolume": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "firstPage": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "lastPage": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        },
+        "journalIssue": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+        }
+      },
+      "required": [
+        "ISSN", 
+        "journalVolume", 
+        "firstPage",
+        "lastPage",
+        "journalIssue"
+      ],
+      "additionalProperties": false
+    } 
+  }
+}
