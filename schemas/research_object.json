@@ -2,20 +2,20 @@
   "id": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "object": {
+    "ResearchObject": {
       "type": "object",
       "properties": {
-        "objectUuid": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+        "objectUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "objectTitle": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "objectPersonRole": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/personRole"
+            "$ref": "#/definitions/PersonRole"
           },
           "minItems": 1
         },
@@ -23,17 +23,17 @@
           "type": "array", 
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/description"
+            "$ref": "#/definitions/Description"
           }
         },
         "objectRights": {
-          "$ref": "#/definitions/rights"
+          "$ref": "#/definitions/Rights"
         },
         "objectDate": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/date"
+            "$ref": "#/definitions/Date"
           },
           "minItems": 1
         },
@@ -41,14 +41,14 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "objectCategory": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "objectResourceType": {
@@ -65,7 +65,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/identifier"
+            "$ref": "#/definitions/Identifier"
           },
           "minItems": 1
         },
@@ -73,14 +73,14 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/identifierRelationship"
+            "$ref": "#/definitions/IdentifierRelationship"
           }
         },
         "objectOrganisationRole": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/organisationRole"
+            "$ref": "#/definitions/OrganisationRole"
           },
           "minItems": 1
         },
@@ -88,36 +88,35 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/preservationEvent"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/PreservationEvent"
           }
         },
         "objectFile": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/file"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/File"
           }
         }
       },
       "required": [
-        "objectUuid",
+        "objectUUID",
         "objectTitle",
         "objectPersonRole",
         "objectDescription",
         "objectRights",
         "objectDate",
         "objectResourceType",
-        "objectValue",
         "objectIdentifier",
         "objectOrganisationRole"
       ],
       "additionalProperties": false
     },
-    "identifierRelationship": {
+    "IdentifierRelationship": {
       "type": "object",
       "properties": {
         "identifier": {
-          "$ref": "#/definitions/identifier"
+          "$ref": "#/definitions/Identifier"
         },
         "relationType": {
           "type": "integer",
@@ -131,11 +130,11 @@
       ],
       "additionalProperties": false
     },
-    "identifier": {
+    "Identifier": {
       "type": "object",
       "properties": {
         "identifierValue": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "identifierType": {
           "type": "integer",
@@ -149,28 +148,28 @@
       ],
       "additionalProperties": false
     },
-    "rights": {
+    "Rights": {
       "type": "object",
       "properties": {
         "rightsStatement": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "rightsHolder": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "licence": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/licence"
+            "$ref": "#/definitions/Licence"
           },
           "minItems": 1
         },
@@ -178,7 +177,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/access"
+            "$ref": "#/definitions/Access"
           },
           "minItems": 1
         }
@@ -189,20 +188,20 @@
       ],
       "additionalProperties": false
     },
-    "licence": {
+    "Licence": {
       "type": "object",
       "properties": {
         "licenceName": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "licenceIdentifier": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "licenseStartDate": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         },
         "licenseEndDate": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         }
       },
       "required": [
@@ -210,7 +209,7 @@
       ],
       "additionalProperties": false
     },
-    "access": {
+    "Access": {
       "type": "object",
       "properties": {
         "accessType": {
@@ -219,7 +218,7 @@
           "maximum": 5
         },
         "accessStatement": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         }
       },
       "required": [
@@ -227,41 +226,41 @@
       ],
       "additionalProperties": false
     },
-    "collection": {
+    "Collection": {
       "type": "object",
       "properties": {
-        "collectionUuid": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+        "collectionUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "collectionName": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "collectionObject": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/object"
+            "$ref": "#/definitions/Object"
           }
         },
         "collectionKeywords": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "collectionCategory": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           }
         },
         "collectionDescription": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           },
           "minItems": 1
         },
@@ -269,7 +268,7 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/rights"
+            "$ref": "#/definitions/Rights"
           },
           "minItems": 1
         },
@@ -277,44 +276,44 @@
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/identifier"
+            "$ref": "#/definitions/Identifier"
           }
         },
         "collectionRelatedIdentifier": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/identifierRelationship"
+            "$ref": "#/definitions/IdentifierRelationship"
           }
         },
         "collectionPersonRole": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/personRole"
+            "$ref": "#/definitions/PersonRole"
           }
         },
         "collectionOrganisationRole": {
           "type": "array",
           "uniqueItems": true,
           "items": {
-            "$ref": "#/definitions/organisationRole"
+            "$ref": "#/definitions/OrganisationRole"
           }
         }
       },
       "required": [
-        "collectionUuid",
+        "collectionUUID",
         "collectionName",
         "collectionDescription",
         "collectionRights"
       ],
       "additionalProperties": false
     },
-    "organisationRole": {
+    "OrganisationRole": {
       "type": "object",
       "properties": {
         "organisation": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/organisation"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/Organisation"
         },
         "role": {
           "type": "integer",
@@ -328,11 +327,11 @@
       ],
       "additionalProperties": false
     },
-    "personRole": {
+    "PersonRole": {
       "type": "object",
       "properties": {
         "person": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/person"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/Person"
         },
         "role": {
           "type": "integer",
@@ -346,11 +345,11 @@
       ],
       "additionalProperties": false
     },
-    "date": {
+    "Date": {
       "type": "object",
       "properties": {
         "dateValue": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         },
         "dateType": {
           "type": "integer",
@@ -364,11 +363,11 @@
       ],
       "additionalProperties": false
     },
-    "description": {
+    "Description": {
       "type": "object",
       "properties": {
         "descriptionValue": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "descriptionType": {
           "type": "integer",

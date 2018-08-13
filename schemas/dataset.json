@@ -1,5 +1,5 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#",
+  "id": "https://www.jisc.ac.uk/rdss/schema/dataset.json/#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
     "object": {
@@ -96,6 +96,16 @@
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/File"
           }
+        },
+        "language": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          }
+        },
+        "coverage": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/common_entities.json/#/definitions/Coverage"
         }
       },
       "required": [

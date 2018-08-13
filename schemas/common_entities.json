@@ -1,0 +1,63 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/common_entities.json/#",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "definitions": {
+    "Coverage": {
+      "type": "object",
+      "properties": {
+        "geospatialCoverage": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/GeospatialCoverage"
+          }
+        },
+        "temporalCoverageStart": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        },
+        "temporalCoverageEnd": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        }
+      },
+      "additionalProperties": false
+    }, 
+   "GeospatialCoverage": {
+      "type": "object",
+      "properties": {
+        "geolocationPoint": {
+            "$ref": "#/definitions/GeolocationPoint"
+        },
+        "geolocationPolygon": {
+          "type": "array", 
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/definitions/GeolocationPoint"
+          }
+        },
+        "geolocationPlace": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "coordinateReferenceSystem": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GeolocationPoint": {
+      "type": "object",
+      "properties": {
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "latitude",
+        "longitude"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

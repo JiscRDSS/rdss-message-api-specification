@@ -6,40 +6,40 @@
       "type": "object",
       "properties": {
         "messageId": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "correlationId": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "messageClass": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/messageClass"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageClass"
         },
         "messageType": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/messageType"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageType"
         },
         "returnAddress": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "messageTimings": {
-          "$ref": "#/definitions/messageTimings"
+          "$ref": "#/definitions/MessageTimings"
         },
         "messageSequence": {
-          "$ref": "#/definitions/messageSequence"
+          "$ref": "#/definitions/MessageSequence"
         },
         "messageHistory": {
-          "$ref": "#/definitions/messageHistory"
+          "$ref": "#/definitions/MessageHistory"
         },
         "version": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/semVer"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/SemVer"
         },
         "errorCode": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "errorDescription": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "generator": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         }
       },
       "required": [
@@ -57,10 +57,10 @@
       "type": "object",
       "properties": {
         "publishedTimestamp": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         },
         "expirationTimestamp": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         }
       },
       "required": [
@@ -72,7 +72,7 @@
       "type": "object",
       "properties": {
         "sequence": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/uuid"
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "position": {
           "type": "integer"
@@ -95,13 +95,13 @@
         "type": "object",
         "properties": {
           "machineId": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/nonEmptyString"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
           },
           "machineAddress": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/ipOrHostname"
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/IpOrHostname"
           },
           "timestamp": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/timestamp"
+           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
           }
         },
         "required": [
