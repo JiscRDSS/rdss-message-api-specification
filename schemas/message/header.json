@@ -40,6 +40,9 @@
         },
         "generator": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "tenantJiscID": {
+          "type": "integer"
         }
       },
       "required": [
@@ -49,7 +52,8 @@
         "messageTimings",
         "messageSequence",
         "version",
-        "generator"
+        "generator",
+        "tenantJiscID"
       ],
       "additionalProperties": false
     },

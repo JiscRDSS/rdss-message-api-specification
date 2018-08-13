@@ -1,10 +1,10 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/messages/message_schema.json/#",
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/message.json/#",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "properties": {
     "messageHeader": {
-      "$ref": "https://www.jisc.ac.uk/rdss/schema/header.json/#/definitions/Header"
+      "$ref": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header"
     },
     "messageBody": {
       "anyOf": [

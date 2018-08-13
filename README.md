@@ -284,6 +284,14 @@ A free text field that clients and applications **SHOULD** populate with a meani
 
 The identifier of the application that generated the message.
 
+### `tenantJiscID`
+
+- Multiplicity:&nbsp;&nbsp;&nbsp;&nbsp;`1`
+- Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Integer`
+
+The JiscID of the institution with which the message is originating. 
+
+
 ## Message Body
 
 ### JSON Schema
