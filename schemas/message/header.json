@@ -1,6 +1,6 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/header.json/#",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "header": {
       "type": "object",
@@ -12,22 +12,35 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "messageClass": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageClass"
+          "type": "string",
+          "enum": [
+            "Command",
+            "Event",
+            "Document"
+          ]
         },
         "messageType": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageType"
+          "type": "string",
+          "enum": [
+            "VocabularyRead", 
+            "VocabularyPatch", 
+            "MetadataRead", 
+            "MetadataCreate", 
+            "MetadataUpdate", 
+            "MetadataDelete"
+          ]
         },
         "returnAddress": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "messageTimings": {
-          "$ref": "#/definitions/MessageTimings"
+          "$ref": "#/definitions/messageTimings"
         },
         "messageSequence": {
-          "$ref": "#/definitions/MessageSequence"
+          "$ref": "#/definitions/messageSequence"
         },
         "messageHistory": {
-          "$ref": "#/definitions/MessageHistory"
+          "$ref": "#/definitions/messageHistory"
         },
         "version": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/SemVer"

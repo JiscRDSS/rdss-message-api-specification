@@ -23,5 +23,6 @@
   "version": "1.2.3-pre.release-1+bui.ld-2",
   "errorCode": "GENERR001",
   "errorDescription": "string",
-  "generator": "string"
+  "generator": "string", 
+  "tenantJiscID": 1
 }

@@ -1,6 +1,6 @@
 {
   "id": "https://www.jisc.ac.uk/rdss/schema/article.json/#",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "Article": {
       "type": "object",

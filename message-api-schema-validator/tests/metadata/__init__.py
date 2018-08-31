@@ -1,5 +1,0 @@
-from tests.metadata.metadata_create_request_test import MetadataCreateRequestTest
-from tests.metadata.metadata_read_request_test import MetadataReadRequestTest
-from tests.metadata.metadata_read_response_test import MetadataReadResponseTest
-from tests.metadata.metadata_update_request_test import MetadataUpdateRequestTest
-from tests.metadata.metadata_delete_request_test import MetadataDeleteRequestTest

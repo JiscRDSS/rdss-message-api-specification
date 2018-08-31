@@ -1,6 +1,6 @@
 {
   "id": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "object": {
       "type": "object",
@@ -96,6 +96,30 @@
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/File"
           }
+        },
+        "coverage": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/common_entities.json/#/definitions/Coverage"
+        },
+        "language": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          }
+        }, 
+        "qualificationLevel": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "qualificationName": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "levelOfAward": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "thesisDissertationType": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
         }
       },
       "required": [
@@ -108,7 +132,12 @@
         "objectResourceType",
         "objectValue",
         "objectIdentifier",
-        "objectOrganisationRole"
+        "objectOrganisationRole",
+        "language",
+        "qualificationLevel",
+        "qualificationName",
+        "yearOfAward",
+        "thesisDissertationType"
       ],
       "additionalProperties": false
     }
