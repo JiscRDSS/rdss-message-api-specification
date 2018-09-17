@@ -2,28 +2,28 @@ import os
 import json
 import jsonschema
 
+
 class RDSSSchemaValidator(object):
 
-    RDSS_SCHEMAS_DIR = os.path.join(os.path.dirname(__file__), "schemas")
+    RDSS_SCHEMAS_DIR = os.path.join(os.path.dirname(__file__), 'schemas')
 
     def __init__(self):
         self._schemas = self._load_schemas()
         self.resolver = jsonschema.RefResolver(
-                '',
-                {},
-                store = {
-                    schema['id']: schema
-                    for schema in self._schemas
-                }
-            )
-        self.format_checker = jsonschema.FormatChecker()
-        
-        self.schema_lookup = {
-                full_id: definition_schema 
+            '',
+            {},
+            store={
+                schema['id']: schema
                 for schema in self._schemas
-                for full_id, definition_schema in self._generate_definition_schemas(schema)
-                }
+            }
+        )
+        self.format_checker = jsonschema.FormatChecker()
 
+        self.schema_lookup = {
+            full_id: definition_schema
+            for schema in self._schemas
+            for full_id, definition_schema in self._generate_definition_schemas(schema)
+        }
 
     def _generate_definition_schemas(self, schema_json):
         schema = schema_json['$schema']
@@ -32,10 +32,10 @@ class RDSSSchemaValidator(object):
         for definition in schema_json.get('definitions', {}).keys():
             full_id = base_id + '/definitions/' + definition
             definition_schema = {
-                    'id': full_id, 
-                    '$schema': schema,
-                    '$ref': full_id
-                    }
+                'id': full_id,
+                '$schema': schema,
+                '$ref': full_id
+            }
             yield full_id, definition_schema
 
     def _list_schema_paths(self):
@@ -59,9 +59,9 @@ class RDSSSchemaValidator(object):
             json_schema,
             resolver=self.resolver,
             format_checker=self.format_checker
-            )
+        )
 
-    def validate_json_with_schema(self, schema_ref, json_file_path): 
+    def validate_json_with_schema(self, schema_ref, json_file_path):
         json_data = self._load_json(json_file_path)
         json_schema = self.schema_lookup[schema_ref]
         print(json_schema)
