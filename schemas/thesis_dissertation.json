@@ -2,7 +2,7 @@
   "id": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "object": {
+    "ThesisDissertation": {
       "type": "object",
       "properties": {
         "objectUUID": {
@@ -53,7 +53,7 @@
         },
         "objectResourceType": {
           "type": "integer",
-          "enum": [2]
+          "enum": [22]
         },
         "objectValue": {
           "type": "integer",
@@ -113,7 +113,7 @@
         "qualificationName": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
-        "levelOfAward": {
+        "yearOfAward": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "thesisDissertationType": {

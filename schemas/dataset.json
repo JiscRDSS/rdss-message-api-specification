@@ -2,7 +2,7 @@
   "id": "https://www.jisc.ac.uk/rdss/schema/dataset.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "object": {
+    "Dataset": {
       "type": "object",
       "properties": {
         "objectUUID": {

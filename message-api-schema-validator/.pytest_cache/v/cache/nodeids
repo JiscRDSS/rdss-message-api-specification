@@ -1,5 +1,0 @@
-[
-  "tests/test_header.py::test_header_is_valid",
-  "tests/test_research_object.py::test_research_object_is_valid",
-  "tests/test_research_object.py::test_article_is_not_a_valid_research_object"
-]

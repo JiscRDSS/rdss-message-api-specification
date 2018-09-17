@@ -146,7 +146,7 @@
         "startDate": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         },
-        "startDate": {
+        "endDate": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         }
       },
