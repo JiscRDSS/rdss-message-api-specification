@@ -17,6 +17,7 @@
     -   id: end-of-file-fixer
     -   id: forbid-new-submodules
     -   id: name-tests-test
+        args: ['--django']
     -   id: requirements-txt-fixer
 
 -   repo: git://github.com/detailyang/pre-commit-shell

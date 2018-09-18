@@ -53,6 +53,7 @@ def invalid_file_against_schema():
             )
     return _invalid_file_against_schema
 
+
 @pytest.fixture
 def load_json():
     def _load_json(json_path):

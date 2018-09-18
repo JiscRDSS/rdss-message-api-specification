@@ -26,6 +26,7 @@ def test_research_object_is_not_a_valid_dataset(invalid_file_against_schema):
         '../messages/body/metadata/create/research_object_create_request.json'
     )
 
+
 def test_information_package_object_is_not_a_valid_dataset(invalid_file_against_schema):
     invalid_file_against_schema(
         'https://www.jisc.ac.uk/rdss/schema/dataset.json/#/definitions/Dataset',
