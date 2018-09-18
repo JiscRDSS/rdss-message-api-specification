@@ -70,7 +70,7 @@
   "objectCategory": [
     "string"
   ],
-  "objectResourceType": 7,
+  "objectResourceType": 26,
   "objectValue": 1,
   "objectIdentifier": [
     {
@@ -174,40 +174,7 @@
       }
     }
   ],
-  "coverage": {
-    "geospatialCoverage": [
-      {
-        "geolocationPoint": {
-          "latitude": 55.856016,
-          "longitude": -4.295604
-        }, 
-        "geolocationPolygon": [
-          {
-            "latitude": 54.402258, 
-            "longitude": -4.739353
-          },
-          {
-            "latitude": 56.032946, 
-            "longitude": -0.665635
-          },
-          {
-            "latitude": 61.077846, 
-            "longitude": -0.414868
-          },
-          {
-            "latitude": 57.304151, 
-            "longitude": -9.399388
-          }
-        ],
-        "geolocationPlace": "string",
-        "coordinateReferenceSystem": "WGS 84"
-      }
-    ],
-    "temporalCoverageStart": "2012-06-13T00:00:00-05:00",
-    "temporalCoverageEnd": "2018-01-02T00:00:00-05:00" 
-  },
-  "language": [
-    "eng"
-  ], 
-  "version": "string"
+  "packageType": 2,
+  "packageContainerType": 1,
+  "packageDescription": "string"
 }

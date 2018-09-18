@@ -2,7 +2,7 @@
   "id": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "accessType": {
+    "AccessType": {
       "enum": [
         "open",
         "safeguarded",
@@ -11,13 +11,13 @@
         "closed"
       ]
     },
-    "checksumType": {
+    "ChecksumType": {
       "enum": [
         "md5",
         "sha256"
       ]
     },
-    "dateType": {
+    "DateType": {
       "enum": [
         "accepted",
         "approved",
@@ -31,7 +31,7 @@
         "published"
       ]
     },
-    "fileUse": {
+    "FileUse": {
       "enum": [
         "originalFile",
         "thumbnailImage",
@@ -42,7 +42,7 @@
         "transcript"
       ]
     },
-    "identifierType": {
+    "IdentifierType": {
       "enum": [
         "ARK",
         "arXiv",
@@ -66,31 +66,32 @@
         "UUID"
       ]
     },
-    "messageClass": {
+    "MessageClass": {
       "enum": [
         "Command",
         "Event",
         "Document"
       ]
     },
-    "messageType": {
+    "MessageType": {
       "enum": [
         "MetadataCreate",
         "MetadataUpdate",
         "MetadataDelete",
         "MetadataRead",
         "VocabularyRead",
-        "VocabularyPatch"
+        "VocabularyPatch",
+        "PreservationCreate"
       ]
     },
-    "objectValue": {
+    "ObjectValue": {
       "enum": [
         "normal",
         "high",
         "veryHigh"
       ]
     },
-    "organisationRole": {
+    "OrganisationRole": {
       "enum": [
         "funder",
         "hostingInstitution",
@@ -104,7 +105,7 @@
         "author"
       ]
     },
-    "organisationType": {
+    "OrganisationType": {
       "enum": [
         "charity",
         "commercial",
@@ -123,13 +124,13 @@
         "display"
       ]
     },
-    "personIdentifierType": {
+    "PersonIdentifierType": {
       "enum": [
         "ORCID",
         "researcherId"
       ]
     },
-    "personRole": {
+    "PersonRole": {
       "enum": [
         "administrator",
         "contactPerson",
@@ -154,7 +155,7 @@
         "depositingUser"
       ]
     },
-    "preservationEventType": {
+    "PreservationEventType": {
       "enum": [
         "capture",
         "compression",
@@ -173,10 +174,13 @@
         "replication",
         "update",
         "validation",
-        "virusCheck"
+        "virusCheck", 
+        "accession",
+        "appraisal",
+        "digitalSignatureGeneration"
       ]
     },
-    "relationType": {
+    "RelationType": {
       "enum": [
         "cites",
         "isCitedBy",
@@ -214,10 +218,11 @@
         "requires",
         "isRequiredBy",
         "hasParent",
-        "isParentOf"
+        "isParentOf",
+        "isAIPOf"
       ]
     },
-    "resourceType": {
+    "ResourceType": {
       "enum": [
         "artDesignItem",
         "article",
@@ -247,20 +252,20 @@
         "informationPackage"
       ]
     },
-    "storageStatus": {
+    "StorageStatus": {
       "enum": [
         "online",
         "nearline",
         "offline"
       ]
     },
-    "storageType": {
+    "StorageType": {
       "enum": [
         "S3",
         "HTTP"
       ]
     },
-    "uploadStatus": {
+    "UploadStatus": {
       "enum": [
         "uploadStarted",
         "uploadComplete",
@@ -304,6 +309,19 @@
       "enum": [
         "thesis",
         "dissertation"
+      ]
+    },
+    "ContainerType": {
+      "enum": [
+        "zip",
+        "none"
+      ]
+    },
+    "PackageType": {
+      "enum": [
+        "AIP",
+        "DIP",
+        "SIP"
       ]
     }
   }

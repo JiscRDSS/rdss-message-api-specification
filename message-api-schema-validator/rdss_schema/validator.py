@@ -61,8 +61,10 @@ class RDSSSchemaValidator(object):
             format_checker=self.format_checker
         )
 
-    def validate_json_with_schema(self, schema_ref, json_file_path):
-        json_data = self._load_json(json_file_path)
+    def validate_json_with_schema(self, schema_ref, json_data):
         json_schema = self.schema_lookup[schema_ref]
-        print(json_schema)
         self._validate_json(json_data, json_schema)
+
+    def validate_json_file_with_schema(self, schema_ref, json_file_path):
+        json_data = self._load_json(json_file_path)
+        self.validate_json_with_schema(schema_ref, json_data)
