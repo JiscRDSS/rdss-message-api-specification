@@ -174,7 +174,7 @@
         "preservationEventType": {
           "type": "integer",
           "minimum": 1,
-          "maximum": 18
+          "maximum": 42
         },
         "preservationEventDetail": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
