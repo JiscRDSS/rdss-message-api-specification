@@ -12,9 +12,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "organisationType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 15
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/OrganisationType"
         },
         "organisationAddress": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
@@ -98,9 +96,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "personIdentifierType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 6
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PersonIdentifierType"
         }
       },
       "required": [

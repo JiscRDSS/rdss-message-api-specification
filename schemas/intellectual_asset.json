@@ -60,9 +60,7 @@
           }
         },
         "fileUse": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 7
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/FileUse"
         },
         "filePreservationEvent": {
           "type": "array",
@@ -73,14 +71,10 @@
           "minItems": 1
         },
         "fileUploadStatus": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/UploadStatus"
         },
         "fileStorageStatus": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/StorageStatus"
         },
         "fileLastDownloaded": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
@@ -127,9 +121,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "storagePlatformType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 2
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/StorageType"
         },
         "storagePlatformCost": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
@@ -150,9 +142,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "checksumType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 2
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ChecksumType"
         },
         "checksumValue": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
@@ -172,9 +162,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "preservationEventType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 42
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PreservationEventType"
         },
         "preservationEventDetail": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"

@@ -56,9 +56,7 @@
           "enum": ["thesisDissertation"]
         },
         "objectValue": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ObjectValue"
         },
         "objectIdentifier": {
           "type": "array",
@@ -117,9 +115,7 @@
             "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "thesisDissertationType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 2
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ThesisDissertationType"
         }
       },
       "required": [

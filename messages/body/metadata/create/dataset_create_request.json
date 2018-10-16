@@ -8,7 +8,7 @@
         "personIdentifier": [
           {
             "personIdentifierValue": "A free text string",
-            "personIdentifierType": 1
+            "personIdentifierType": "ORCID"
           }
         ],
         "personHonorificPrefix": "A free text string",
@@ -22,18 +22,18 @@
           "organisation": {
             "organisationJiscId": 1,
             "organisationName": "A free text string",
-            "organisationType": 1,
+            "organisationType": "higherEducation",
             "organisationAddress": "A free text string"
           }
         }
       },
-      "role": 1
+      "role": "author"
     }
   ],
   "objectDescription": [
     {
       "descriptionValue": "A free text string", 
-      "descriptionType": 1
+      "descriptionType": "abstract"
     }
   ],
   "objectRights": {
@@ -53,7 +53,7 @@
     ],
     "access": [
       {
-        "accessType": 1,
+        "accessType": "open",
         "accessStatement": "A free text string"
       }
     ]
@@ -61,7 +61,7 @@
   "objectDate": [
     {
       "dateValue": "2002-10-02T10:00:00-05:00",
-      "dateType": 1
+      "dateType": "accepted"
     }
   ],
   "objectKeywords": [
@@ -71,20 +71,20 @@
     "A free text string"
   ],
   "objectResourceType": "dataset",
-  "objectValue": 1,
+  "objectValue": "normal",
   "objectIdentifier": [
     {
       "identifierValue": "A free text string",
-      "identifierType": 1
+      "identifierType": "URL"
     }
   ],
   "objectRelatedIdentifier": [
     {
       "identifier": {
         "identifierValue": "A free text string",
-        "identifierType": 1
+        "identifierType": "DOI"
       },
-      "relationType": 1
+      "relationType": "cites"
     }
   ],
   "objectOrganisationRole": [
@@ -92,16 +92,16 @@
       "organisation": {
         "organisationJiscId": 1,
         "organisationName": "A free text string",
-        "organisationType": 1,
+        "organisationType": "higherEducation",
         "organisationAddress": "A free text string"
       },
-      "role": 1
+      "role": "hostingInstitution"
     }
   ],
   "objectPreservationEvent": [
     {
       "preservationEventValue": "A free text string",
-      "preservationEventType": 1,
+      "preservationEventType": "accession",
       "preservationEventDetail": "A free text string"
     }
   ],
@@ -130,7 +130,7 @@
         ],
         "access": [
           {
-            "accessType": 1,
+            "accessType": "open",
             "accessStatement": "A free text string"
           }
         ]
@@ -138,7 +138,7 @@
       "fileChecksum": [
         {
           "checksumUUID": "df23b46b-6b64-4a40-842f-5ad363bb6e11",
-          "checksumType": 1,
+          "checksumType": "md5",
           "checksumValue": "A free text string"
         }
       ],
@@ -151,16 +151,16 @@
       "filePuid": [
         "A free text string"
       ],
-      "fileUse": 1,
+      "fileUse": "originalFile",
       "filePreservationEvent": [
         {
           "preservationEventValue": "A free text string",
-          "preservationEventType": 1,
+          "preservationEventType": "accession",
           "preservationEventDetail": "A free text string"
         }
       ],
-      "fileUploadStatus": 1,
-      "fileStorageStatus": 1,
+      "fileUploadStatus": "uploadComplete",
+      "fileStorageStatus": "online",
       "fileLastDownloaded": "2002-10-02T10:00:00-05:00",
       "fileTechnicalAttributes": [
         "A free text string"
@@ -169,7 +169,7 @@
       "fileStoragePlatform": {
         "storagePlatformUUID": "f2939501-2b2d-4e5c-9197-0daa57ccb621",
         "storagePlatformName": "A free text string",
-        "storagePlatformType": 1,
+        "storagePlatformType": "HTTP",
         "storagePlatformCost": "A free text string"
       }
     }

@@ -56,9 +56,7 @@
           "enum": ["article"]
         },
         "objectValue": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ObjectValue"
         },
         "objectIdentifier": {
           "type": "array",
@@ -111,14 +109,10 @@
           }
         },
         "articleProcessingCharge": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 6
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/RIOXXTermsAPC"
         }, 
         "publicationVersion": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 8
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PublicationVersion"
         }, 
         "journal": {
           "$ref": "#/definitions/Journal"

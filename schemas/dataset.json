@@ -56,9 +56,7 @@
           "enum": ["dataset"]
         },
         "objectValue": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ObjectValue"
         },
         "objectIdentifier": {
           "type": "array",
