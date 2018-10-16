@@ -52,8 +52,8 @@
           }
         },
         "objectResourceType": {
-          "type": "integer",
-          "enum": [2]
+          "type": "string",
+          "enum": ["article"]
         },
         "objectValue": {
           "type": "integer",
