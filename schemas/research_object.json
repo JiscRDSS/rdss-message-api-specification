@@ -37,7 +37,7 @@
           },
           "minItems": 1
         },
-        "objectKeywords": {
+        "objectKeyword": {
           "type": "array",
           "uniqueItems": true,
           "items": {
@@ -232,7 +232,7 @@
             "$ref": "#/definitions/Object"
           }
         },
-        "collectionKeywords": {
+        "collectionKeyword": {
           "type": "array",
           "uniqueItems": true,
           "items": {

@@ -79,7 +79,7 @@
         "fileLastDownloaded": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
         },
-        "fileTechnicalAttributes": {
+        "fileTechnicalAttribute": {
           "type": "array",
           "uniqueItems": true,
           "items": {

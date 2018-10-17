@@ -59,7 +59,7 @@
       "dateType": 1
     }
   ],
-  "objectKeywords": [
+  "objectKeyword": [
     "string"
   ],
   "objectCategory": [
@@ -157,7 +157,7 @@
       "fileUploadStatus": 1,
       "fileStorageStatus": 1,
       "fileLastDownloaded": "2002-10-02T10:00:00-05:00",
-      "fileTechnicalAttributes": [
+      "fileTechnicalAttribute": [
         "string"
       ],
       "fileStorageLocation": "https://tools.ietf.org/html/rfc3986",
