@@ -5,31 +5,10 @@
     "InformationPackage": {
       "type": "object",
       "properties": {
-        "objectUUID": {
+        "packageUUID": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
-        "objectTitle": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-        },
-        "objectPersonRole": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/PersonRole"
-          },
-          "minItems": 1
-        },
-        "objectDescription": {
-          "type": "array", 
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Description"
-          }
-        },
-        "objectRights": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Rights"
-        },
-        "objectDate": {
+        "packageDate": {
           "type": "array",
           "uniqueItems": true,
           "items": {
@@ -37,91 +16,35 @@
           },
           "minItems": 1
         },
-        "objectKeywords": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-          }
-        },
-        "objectCategory": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-          }
-        },
-        "objectResourceType": {
-          "type": "integer",
-          "enum": [26]
-        },
-        "objectValue": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
-        },
-        "objectIdentifier": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Identifier"
-          },
-          "minItems": 1
-        },
-        "objectRelatedIdentifier": {
+        "packageRelatedIdentifier": {
           "type": "array",
           "uniqueItems": true,
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/IdentifierRelationship"
           }
         },
-        "objectOrganisationRole": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/OrganisationRole"
-          },
-          "minItems": 1
-        },
-        "objectPreservationEvent": {
+        "packagePreservationEvent": {
           "type": "array",
           "uniqueItems": true,
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/PreservationEvent"
           }
         },
-        "objectFile": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/File"
-          }
-        },
         "packageType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PackageType"
         },
         "packageContainerType": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 2
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ContainerType"
         },
         "packageDescription": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         }
       },
       "required": [
-        "objectUUID",
-        "objectTitle",
-        "objectPersonRole",
-        "objectDescription",
-        "objectRights",
-        "objectDate",
-        "objectResourceType",
-        "objectValue",
-        "objectIdentifier",
-        "objectOrganisationRole",
+        "packageUUID",
+        "packageDate",
+        "packageRelatedIdentifier",
+        "packagePreservationEvent",
         "packageType",
         "packageContainerType"
       ],

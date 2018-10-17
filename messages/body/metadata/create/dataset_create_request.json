@@ -98,13 +98,6 @@
       "role": "hostingInstitution"
     }
   ],
-  "objectPreservationEvent": [
-    {
-      "preservationEventValue": "A free text string",
-      "preservationEventType": "accession",
-      "preservationEventDetail": "A free text string"
-    }
-  ],
   "objectFile": [
     {
       "fileUUID": "e150c4ab-0370-4e5a-8722-7fb3369b7017",
