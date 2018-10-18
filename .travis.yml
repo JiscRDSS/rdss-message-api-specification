@@ -7,15 +7,15 @@ before_install:
   - sudo apt-get update -yqq
 
 install:
-  - pip install -r requirements.txt
+  - pip install -r message-api-schema-validator/requirements.txt
 
 before_script:
-  - pylint --errors-only ./message-api-schema-validator/schema_validator_test_suite.py
+  - pylint --errors-only ./message-api-schema-validator/rdss_schema
   - pylint --errors-only ./message-api-schema-validator/tests
 
 script:
   - pre-commit run --all-files --verbose
-  - python message-api-schema-validator/schema_validator_test_suite.py
+  - cd ./message-api-schema-validator && pytest
 
 after_success:
   - chmod +x ./update_taxonomy_data.sh
