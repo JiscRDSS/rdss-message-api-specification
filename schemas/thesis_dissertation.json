@@ -32,6 +32,9 @@
         "objectDate": {
           "type": "array",
           "uniqueItems": true,
+          "contains": {
+            "$ref": "#/definitions/ThesisAwardedDate"
+          },
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Date"
           },
@@ -76,17 +79,13 @@
         "objectOrganisationRole": {
           "type": "array",
           "uniqueItems": true,
+          "contains": {
+            "$ref": "#/definitions/AwardingInstitutionOrganisationRole"
+          },
           "items": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/OrganisationRole"
           },
           "minItems": 1
-        },
-        "objectPreservationEvent": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/PreservationEvent"
-          }
         },
         "objectFile": {
           "type": "array",
@@ -110,12 +109,6 @@
         },
         "qualificationName": {
             "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-        },
-        "yearOfAward": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-        },
-        "thesisDissertationType": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ThesisDissertationType"
         }
       },
       "required": [
@@ -131,9 +124,41 @@
         "objectOrganisationRole",
         "language",
         "qualificationLevel",
-        "qualificationName",
-        "yearOfAward",
-        "thesisDissertationType"
+        "qualificationName"
+      ],
+      "additionalProperties": false
+    },
+    "ThesisAwardedDate": {
+      "type": "object",
+      "properties": {
+        "dateValue": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        },
+        "dateType": {
+          "type": "string",
+          "enum": ["awarded"]
+        }
+      },
+      "required": [
+        "dateValue",
+        "dateType"
+      ],
+      "additionalProperties": false
+    }, 
+    "AwardingInstitutionOrganisationRole": {
+      "type": "object",
+      "properties": {
+        "organisation": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/Organisation"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["awardingInstitution"]
+        }
+      },
+      "required": [
+        "organisation",
+        "role"
       ],
       "additionalProperties": false
     }

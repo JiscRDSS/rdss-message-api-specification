@@ -22,8 +22,9 @@
         "accepted",
         "approved",
         "available",
-        "copyrighted",
+        "awarded",
         "collected",
+        "copyrighted",
         "created",
         "issued",
         "modified",
@@ -93,22 +94,25 @@
     },
     "OrganisationRole": {
       "enum": [
+        "advocacy",
+        "author",
+        "awardingInstitution",
+        "distributor",
         "funder",
         "hostingInstitution",
-        "rightsHolder",
-        "sponsor",
         "publisher",
         "registrationAgency",
         "registrationAuthority",
-        "distributor",
-        "advocacy",
-        "author"
+        "rightsHolder",
+        "sponsor"
       ]
     },
     "OrganisationType": {
       "enum": [
+        "billing",
         "charity",
         "commercial",
+        "display",
         "funder",
         "furtherEducation",
         "government",
@@ -119,9 +123,7 @@
         "professionalBody",
         "research",
         "school",
-        "skills",
-        "billing",
-        "display"
+        "skills"
       ]
     },
     "PersonIdentifierType": {
@@ -133,26 +135,26 @@
     "PersonRole": {
       "enum": [
         "administrator",
+        "author",
         "contactPerson",
         "dataAnalyser",
         "dataCollector",
         "dataCreator",
         "dataManager",
+        "depositingUser",
         "editor",
         "investigator",
+        "other",
         "producer",
         "projectLeader",
-        "publisher",
         "projectMember",
+        "publisher",
         "relatedPerson",
         "researcher",
         "researcherGroup",
         "rightsHolder",
         "sponsor",
-        "supervisor",
-        "other",
-        "author",
-        "depositingUser"
+        "supervisor"
       ]
     },
     "PreservationEventType": {
@@ -198,49 +200,49 @@
         "unpacking",
         "unquarantine",
         "validation",
-	"virusCheck"
+        "virusCheck"
       ]
     },
     "RelationType": {
       "enum": [
-        "cites",
-        "isCitedBy",
-        "isSupplementTo",
-        "isSupplementedBy",
-        "continues",
-        "isContinuedBy",
-        "hasMetadata",
-        "isMetadataFor",
-        "isNewVersionOf",
-        "isPreviousVersionOf",
-        "isPartOf",
-        "hasPart",
-        "isReferencedBy",
-        "references",
-        "isDocumentedBy",
-        "documents",
-        "isCompiledBy",
-        "compiles",
-        "isVariantFormOf",
-        "isOriginalFormOf",
-        "isIdenticalTo",
-        "isReviewedBy",
-        "reviews",
-        "isDerivedFrom",
-        "isSourceOf",
-        "isCommentOn",
-        "hasComment",
-        "isReplyTo",
-        "hasReply",
         "basedOnData",
+        "cites",
+        "compiles",
+        "continues",
+        "documents",
+        "hasComment",
+        "hasMetadata",
+        "hasParent",
+        "hasPart",
         "hasRelatedMaterial",
+        "hasReply",
+        "isAIPOf",
         "isBasedOn",
         "isBasisFor",
-        "requires",
-        "isRequiredBy",
-        "hasParent",
+        "isCitedBy",
+        "isCommentOn",
+        "isCompiledBy",
+        "isContinuedBy",
+        "isDerivedFrom",
+        "isDocumentedBy",
+        "isIdenticalTo",
+        "isMetadataFor",
+        "isNewVersionOf",
+        "isOriginalFormOf",
         "isParentOf",
-        "isAIPOf"
+        "isPartOf",
+        "isPreviousVersionOf",
+        "isReferencedBy",
+        "isReplyTo",
+        "isRequiredBy",
+        "isReviewedBy",
+        "isSourceOf",
+        "isSupplementedBy",
+        "isSupplementTo",
+        "isVariantFormOf",
+        "references",
+        "requires",
+        "reviews"
       ]
     },
     "ResourceType": {
@@ -254,6 +256,7 @@
         "dataset",
         "examPaper",
         "image",
+        "informationPackage",
         "learningObject",
         "movingImage",
         "musicComposition",
@@ -269,8 +272,7 @@
         "thesisDissertation",
         "unknown",
         "website",
-        "workflow",
-        "informationPackage"
+        "workflow"
       ]
     },
     "StorageStatus": {
@@ -324,12 +326,6 @@
         "CVoR",
         "EVoR",
         "NA"
-      ]
-    },
-    "ThesisDissertationType": {
-      "enum": [
-        "thesis",
-        "dissertation"
       ]
     },
     "ContainerType": {

@@ -81,13 +81,6 @@
           },
           "minItems": 1
         },
-        "objectPreservationEvent": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/PreservationEvent"
-          }
-        },
         "objectFile": {
           "type": "array",
           "uniqueItems": true,
