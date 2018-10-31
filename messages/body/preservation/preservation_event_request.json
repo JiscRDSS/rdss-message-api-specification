@@ -1,0 +1,10 @@
+{
+  "packageUUID": "5680e8e0-28a5-4b20-948e-fd0d08781e0b",
+  "objectUUID": "0a021cf3-fa5f-4b86-ab09-634bd5de1abd",
+  "preservationEventValue": "A free text string",
+  "preservationEventType": "informationPackageCreation",
+  "preservationEventDetail": "A free text string",
+  "packageType": "AIP",
+  "packageContainerType": "zip",
+  "packageDescription": "A free text string"
+}

@@ -21,7 +21,6 @@
       "required": [
         "organisationJiscId",
         "organisationName",
-        "organisationType",
         "organisationAddress"
       ],
       "additionalProperties": false
