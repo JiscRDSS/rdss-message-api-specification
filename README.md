@@ -502,27 +502,6 @@ It is delivered in the form of an [AWS Kinesis Stream](https://aws.amazon.com/ki
 
 In order for a Message to be consumed by the Audit Log, Messages **MUST** be in serialised JSON format and **MUST NOT** exceed 1000KB.
 
-## Topology
-
-The following diagram describes the topology of the Messaging system (the diagram can be edited using [Microsoft Visio](https://products.office.com/en-gb/visio/flowchart-software). The source is provided in the [`topology/topology.vsdx`](topology/topology.vsdx) file).
-
-[Hohpe EID Stencils](http://www.enterpriseintegrationpatterns.com/downloads.html) is used in the creation of the topology diagram.
-
-|                           EIP Key                            | Description           |
-|:------------------------------------------------------------:|-----------------------|
-|     ![Directional Queue](topology/directional-queue.png)     | Directional Queue     |
-| ![Invalid Message Queue](topology/invalid-message-queue.png) | Invalid Message Queue |
-|   ![Error Message Queue](topology/error-message-queue.png)   | Error Message Queue   |
-|       ![Channel Adaptor](topology/channel-adaptor.png)       | Channel Adaptor       |
-|        ![Message Broker](topology/message-broker.png)        | Message Broker        |
-|  ![Content Based Router](topology/content-based-router.png)  | Content Based Router  |
-
-![Topology](topology/topology.png)
-_(click the diagram to view in high resolution)_
-
-- [Message Routers](http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRouter.html) and [Channel Adaptors](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ChannelAdaptor.html) are implemented as [AWS Lambda](https://aws.amazon.com/lambda/) services.
-- [Message Channels](http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageChannel.html) are implemented using [AWS Kinesis Streams](https://aws.amazon.com/kinesis/streams/).
-- Message log stores are implemented using [Amazon S3](https://aws.amazon.com/s3/).
 
 ## Transactional Behaviour
 
@@ -683,68 +662,6 @@ if(retry > max_retries):
 ```
 
 In the event that `max_retries` are exceeded, clients **MUST** write a log entry (as per [Logging](#logging)) with the special error code `GENERR010`.
-
-## Message Gateway & Channel Adaptor
-
-The messaging system offers applications who wish to send and receive Messages two mechanisms of interaction: a [Message Gateway](http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessagingGateway.html) and a [Channel Adaptor](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ChannelAdaptor.html).
-
-A Message Gateway offers a preferred approach to interfacing with the messaging system, whereas the Channel Adaptor exists outside of, and independently from, the application and therefore can be utilised by applications where modification of the application code is not feasible (however, such applications **MUST** still expose a mechanism for programmatic access and querying of the application).
-
-### Message Gateway
-
-The Message Gateway offers the preferred interface to the messaging system. It exists within the Message consuming / producing application itself and encapsulates the code specific to the messaging system whilst exposing APIs for interaction.
-
-The following diagram describes the class structure of a Message Gateway (the diagram can be edited using [StarUML](http://staruml.io/). The source is provided in the [`message-gateway/message-gateway-simple.mdj`](message-gateway/message-gateway-simple.mdj) file).
-
-![Message Gateway](message-gateway/message-gateway-simple.png)
-
-The Message Gateway is designed to abstract the complexities and specifics of the underlying queueing system from the application, including the handling the requests and responses, and hiding the scenario where a single call to the Message Gateway interface may result in multiple calls to the queueing system.
-
-The Message Gateway **MUST** be synchronous, such that all calls to Message Gateway interface will block until the underlying request(s) complete in full.
-
-All Message Gateway implementations **MUST** be configurable to support, at a minimum:
-
-- Switching between queue types, e.g. AWS Kinesis Stream, RabbitMQ and Mock
-- Specify the addresses of the channels supported by the Message Gateway
-- The retry interval for pulling from the queue when waiting for a return Message
-
-#### Message Gateway Sequence Diagrams
-
-The sequence diagrams below describe the flow of executing through the Message Gateway for both a [Metadata Create](messages/body/metadata/create/) and a [Metadata Read](messages/body/metadata/read/) operation (the diagrams can be edited using [Visual Paradigm](https://www.visual-paradigm.com/). The source is provided in the [`message-gateway/sequence-diagrams.vpp`](message-gateway/sequence-diagrams.vpp) file).
-
-##### Metadata Create
-
-![Message Gateway Metadata Create](message-gateway/metadata-create.png)
-
-The creation process is "fire and forget", insomuch that it does not expect a return Message in response to the Message that it puts on the queue.
-
-##### Metadata Read
-
-![Message Gateway Metdata Read](message-gateway/metadata-read.png)
-
-In contrast to the Metadata Create operation, the Metadata Read operation requires a response Message.
-
-To model this, the `Message Channel` lifeline enters the following loops:
-
-1. Fetch the Shards for the current Stream through `DescribeStreams`.
-2. For each Shard return in step `1`, create a new thread and:
-  * 2.1. Execute the `GetShardIterator` to retrieve the Shard Iterator for the current Shard
-  * 2.1. Execute `GetRecords` for the current `ShardIterator`
-  * 2.2. Search the returned record's for a Message with a `correlationId` that matches the request Message
-  * 2.3. If found, all threads exit their loops
-  * 2.4. Otherwise, update the `ShardIterator` with the `NextShardIterator` value returned in step `2.1`
-  * 2.5. Sleep for a predefined period of time
-  * 2.6. Return to step `2.1`
-
-### Channel Adaptor
-
-The alternative interface to the messaging system is the Channel Adaptor, which does not require modification of the application itself. Instead, the Channel Adaptor exists as a separate component and acts as a middle man between the queues and the application, leveraging synchronous APIs that the application exposes.
-
-![Channel Adaptor](channel-adaptor/channel-adaptor.png)
-
-The typical implementation of a Channel Adaptor would be a pull mechanism which periodically polls the APIs exposed by the application, probing for newly created datasets and objects.
-
-The Channel Adaptor would then convert the retrieved data to a format compatible with the messaging system (as specified by this API), before adding to the relevant queue for consumption and processing by other components and applications.
 
 ## Logging
 
