@@ -5,7 +5,7 @@ def test_preservation_create_information_package_body_is_valid(load_json, valid_
             '../messages/header/header.json'
         ),
         'messageBody': load_json(
-            '../messages/body/preservation/create/information_package_create_request.json'
+            '../messages/body/preservation/preservation_event_request.json'
         )
     }
     valid_against_schema(

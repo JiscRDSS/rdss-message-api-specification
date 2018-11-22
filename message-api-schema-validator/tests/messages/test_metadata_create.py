@@ -65,7 +65,7 @@ def test_metadata_create_information_package_body_is_invalid(load_json, invalid_
             '../messages/header/header.json'
         ),
         'messageBody': load_json(
-            '../messages/body/preservation/create/information_package_create_request.json'
+            '../messages/body/preservation/preservation_event_request.json'
         )
     }
     invalid_against_schema(

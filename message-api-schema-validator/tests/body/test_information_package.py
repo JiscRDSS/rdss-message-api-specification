@@ -2,7 +2,7 @@
 def test_information_package_is_valid(valid_file_against_schema):
     valid_file_against_schema(
         'https://www.jisc.ac.uk/rdss/schema/information_package.json/#/definitions/InformationPackage',
-        '../messages/body/preservation/create/information_package_create_request.json'
+        '../messages/body/preservation/preservation_event_request.json'
     )
 
 
