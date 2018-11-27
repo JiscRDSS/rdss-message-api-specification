@@ -62,8 +62,7 @@
         "personUUID",
         "personIdentifier",
         "personGivenNames",
-        "personFamilyNames",
-        "personOrganisationUnit"
+        "personFamilyNames"
       ],
       "additionalProperties": false
     },
