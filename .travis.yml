@@ -9,10 +9,6 @@ before_install:
 install:
   - pip install -r message-api-schema-validator/requirements.txt
 
-before_script:
-  - pylint --errors-only ./message-api-schema-validator/rdss_schema
-  - pylint --errors-only ./message-api-schema-validator/tests
-
 script:
   - pre-commit run --all-files --verbose
   - cd ./message-api-schema-validator && pytest
