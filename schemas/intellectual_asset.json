@@ -63,12 +63,7 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/FileUse"
         },
         "filePreservationEvent": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/definitions/PreservationEvent"
-          },
-          "minItems": 1
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
         },
         "fileUploadStatus": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/UploadStatus"
@@ -103,7 +98,6 @@
         "fileCompositionLevel",
         "fileDateModified",
         "fileUse",
-        "filePreservationEvent",
         "fileUploadStatus",
         "fileStorageStatus",
         "fileStorageLocation",
@@ -152,25 +146,6 @@
         "checksumUUID",
         "checksumType",
         "checksumValue"
-      ],
-      "additionalProperties": false
-    },
-    "PreservationEvent": {
-      "type": "object",
-      "properties": {
-        "preservationEventValue": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-        },
-        "preservationEventType": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PreservationEventType"
-        },
-        "preservationEventDetail": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
-        }
-      },
-      "required": [
-        "preservationEventValue",
-        "preservationEventType"
       ],
       "additionalProperties": false
     },
