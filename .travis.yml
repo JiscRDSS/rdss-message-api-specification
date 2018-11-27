@@ -18,7 +18,5 @@ script:
   - cd ./message-api-schema-validator && pytest
 
 after_success:
-  - chmod +x ./update_taxonomy_data.sh
-  - ./update_taxonomy_data.sh
   - chmod +x ./announce_to_github.sh
   - ./announce_to_github.sh
