@@ -12,23 +12,10 @@
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
         },
         "messageClass": {
-          "type": "string",
-          "enum": [
-            "Command",
-            "Event",
-            "Document"
-          ]
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageClass"
         },
         "messageType": {
-          "type": "string",
-          "enum": [
-            "VocabularyRead", 
-            "VocabularyPatch", 
-            "MetadataRead", 
-            "MetadataCreate", 
-            "MetadataUpdate", 
-            "MetadataDelete"
-          ]
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageType"
         },
         "returnAddress": {
           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"

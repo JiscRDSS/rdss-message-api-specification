@@ -80,9 +80,7 @@
         "MetadataUpdate",
         "MetadataDelete",
         "MetadataRead",
-        "VocabularyRead",
-        "VocabularyPatch",
-        "PreservationCreate"
+        "PreservationEvent"
       ]
     },
     "ObjectValue": {
