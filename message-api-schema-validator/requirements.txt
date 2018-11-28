@@ -1,3 +1,5 @@
 jsonschema==3.0.0a3
 pre-commit
 pytest
+rfc3987
+strict-rfc3339
