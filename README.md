@@ -308,13 +308,12 @@ Currently, all JSON schemas IDs (including `$ref` declarations within the schema
 
 The following example Message payloads are provided in the [`messages/body/`](messages/body/) folder:
 
-|            | **Vocabulary**                                                                                              | **Metadata**                                                                                                |
-|------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Read**   | Message Type:   `VocabularyRead`<br>Documentation: [`messages/body/vocabulary/read/`](messages/body/vocabulary/read/) | Message Type: `MetadataRead`<br>Documentation: [`messages/body/metadata/read/`](messages/body/metadata/read/)             |
-| **Create** | Not Supported                                                                                               | Message Type:   `MetadataCreate`<br>Documentation: [`messages/body/metadata/create/`](messages/body/metadata/create/) |
-| **Update** | Not Supported                                                                                               | Message Type: `MetadataUpdate`<br>Documentation: [`messages/body/metadata/update/`](messages/body/metadata/update/)       |
-| **Patch**  | Message Type: `VocabularyPatch`<br>Documentation: [`messages/body/vocabulary/patch/`](messages/body/vocabulary/patch/)     | Not Supported                                                                                               |
-| **Delete** | Not Supported                                                                                               | Message Type: `MetadataDelete`<br>Documentation: [`messages/body/metadata/delete/`](messages/body/metadata/delete/)       |
+|            | **Metadata**                                                                                                |
+|------------|-------------------------------------------------------------------------------------------------------------|
+| **Read**   | Message Type: `MetadataRead`<br>Documentation: [`messages/body/metadata/read/`](messages/body/metadata/read/)             |
+| **Create** | Message Type:   `MetadataCreate`<br>Documentation: [`messages/body/metadata/create/`](messages/body/metadata/create/) |
+| **Update** | Message Type: `MetadataUpdate`<br>Documentation: [`messages/body/metadata/update/`](messages/body/metadata/update/)       |
+| **Delete** | Message Type: `MetadataDelete`<br>Documentation: [`messages/body/metadata/delete/`](messages/body/metadata/delete/)       |
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
@@ -480,16 +479,10 @@ The following sections describe the error codes that **MUST** be utilised when a
 
 | Error Code     | Description                                                            |
 |----------------|------------------------------------------------------------------------|
-| `APPERRMET001` | Received a Metadata `UPDATE` with a `datasetUuid` that does not exist. |
-| `APPERRMET002` | Received a Metadata `DELETE` with a `datasetUuid` that does not exist. |
-| `APPERRMET003` | Received a Metadata `READ` with a `datasetUuid` that does not exist.   |
+| `APPERRMET001` | Received a Metadata `UPDATE` with a `objectUUID` that does not exist. |
+| `APPERRMET002` | Received a Metadata `DELETE` with a `objectUUID` that does not exist. |
+| `APPERRMET003` | Received a Metadata `READ` with a `objectUUID` that does not exist.   |
 | `APPERRMET004` | Received an invalid checksum for a file provided within the payload.   |
-
-#### Vocabulary Error Codes
-
-| Error Code     | Description                                                             |
-|----------------|-------------------------------------------------------------------------|
-| `APPERRVOC002` | Received a Vocabulary `READ` with a `vocabularyId` that does not exist. |
 
 ## Audit Log
 
