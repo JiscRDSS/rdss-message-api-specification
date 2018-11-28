@@ -293,12 +293,24 @@ The JiscID of the institution with which the message is originating.
 
 ### JSON Schema
 
-The following JSON schemas are provided as part of this project, which fully describe the associated [Data Model](https://github.com/JiscRDSS/rdss-canonical-data-model/tree/1.0.0):
+The following JSON schemas are provided as part of this project, which fully describe the associated [Data Model](https://github.com/JiscRDSS/Canonical-data-model/tree/4.0.0):
 
-- [`schemas/research_object.json`](schemas/research_object.json)
-- [`schemas/material_asset.json`](schemas/material_asset.json)
-- [`schemas/intellectual_asset.json`](schemas/intellectual_asset.json)
-- [`schemas/enumeration.json`](schemas/enumeration.json) - *Note that enumeration values are provided for reference only. Enumerations* ***MUST*** *be referenced using their respective ID values.*
+- The core object of the Canonical data model is the `Research Object`, which is described, along with associated objects in the following schemas:  
+  - [`schemas/research_object.json`](schemas/research_object.json)
+  - [`schemas/material_asset.json`](schemas/material_asset.json)
+  - [`schemas/intellectual_asset.json`](schemas/intellectual_asset.json)
+
+- Content models which inherit from `Research Object`, with additional associated objects unique to content models are described in the following schemas:
+  - [`schemas/article.json`](schemas/article.json)
+  - [`schemas/dataset.json`](schemas/dataset.json)
+  - [`schemas/thesis_dissertation.json`](schemas/thesis_dissertation.json)
+
+- The Information Package model is described in the following schema: 
+  - [`schemas/information_package.json`](schemas/information_package.json)
+
+- Enumerations and types used across schemas in this repository are found in the following schemas:
+  - [`schemas/enumeration.json`](schemas/enumeration.json) 
+  - [`schemas/enumeration.json`](schemas/types.json) 
 
 The schemas can be used to assist in development and validation of JSON objects that represent payloads, which are described in this API. Additionally, they are also used within the [`message-api-schema-validator/`](message-api-schema-validator/) tool, which validates the example payload JSON objects described in the [`messages/body/`](messages/body/) folder.
 
@@ -308,12 +320,14 @@ Currently, all JSON schemas IDs (including `$ref` declarations within the schema
 
 The following example Message payloads are provided in the [`messages/body/`](messages/body/) folder:
 
-|            | **Metadata**                                                                                                |
-|------------|-------------------------------------------------------------------------------------------------------------|
-| **Read**   | Message Type: `MetadataRead`<br>Documentation: [`messages/body/metadata/read/`](messages/body/metadata/read/)             |
-| **Create** | Message Type:   `MetadataCreate`<br>Documentation: [`messages/body/metadata/create/`](messages/body/metadata/create/) |
-| **Update** | Message Type: `MetadataUpdate`<br>Documentation: [`messages/body/metadata/update/`](messages/body/metadata/update/)       |
-| **Delete** | Message Type: `MetadataDelete`<br>Documentation: [`messages/body/metadata/delete/`](messages/body/metadata/delete/)       |
+| **MessageType** | **Request Schema** | **Response Schema** |
+|-|-|-|
+| `MetadataCreate`   | [`schemas/message/metadata/create_request.json`](schemas/message/metadata/create_request.json) | |
+| `MetadataRead`   | [`schemas/message/metadata/read_request.json`](schemas/message/metadata/read_request.json) | [`schemas/message/metadata/read_response.json`](schemas/message/metadata/read_response.json) | 
+| `MetadataUpdate`   | [`schemas/message/metadata/update_request.json`](schemas/message/metadata/update_request.json) | |
+| `MetadataDelete`   | [`schemas/message/metadata/delete_request.json`](schemas/message/metadata/delete_request.json) | |
+| `PreservationEvent`   | [`schemas/message/preservation/preservation_event_request.json`](schemas/message/metadata/preservation_event_request.json) | |
+| \
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
