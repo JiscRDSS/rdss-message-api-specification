@@ -1,6 +1,5 @@
 {
-  "messageId": "c677641b-c70e-4a7f-9807-ea20742c346e",
-  "correlationId": "4501437a-ce95-4372-be5c-277cb6a826eb",
+  "messageId": "167872ca-cff7-4f93-ad11-04e391aec03c",
   "messageClass": "Event",
   "messageType": "PreservationEvent",
   "returnAddress": "string",
@@ -9,7 +8,7 @@
     "expirationTimestamp": "2004-08-01T10:00:00-00:00"
   },
   "messageSequence": {
-    "sequence": "570e54de-ddeb-47a9-b629-2a1ec2f85726",
+    "sequence": "71848b9c-65a8-4818-92c3-e3131d63af38",
     "position": 1,
     "total": 1
   },

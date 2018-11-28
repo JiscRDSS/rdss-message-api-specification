@@ -2,7 +2,7 @@
 def test_preservation_event_information_package_body_is_valid(load_json, valid_against_schema):
     message = {
         'messageHeader': load_json(
-            '../messages/header/header.json'
+            '../messages/header/preservation_event_header.json'
         ),
         'messageBody': load_json(
             '../messages/body/preservation/preservation_event_request.json'
@@ -17,7 +17,7 @@ def test_preservation_event_information_package_body_is_valid(load_json, valid_a
 def test_preservation_event_research_object_body_is_invalid(load_json, invalid_against_schema):
     message = {
         'messageHeader': load_json(
-            '../messages/header/header.json'
+            '../messages/header/preservation_event_header.json'
         ),
         'messageBody': load_json(
             '../messages/body/metadata/create/research_object_create_request.json'

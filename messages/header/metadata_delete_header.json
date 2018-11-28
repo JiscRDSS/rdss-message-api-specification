@@ -1,14 +1,14 @@
 {
-  "messageId": "b2bc7a73-3db3-4492-9c33-3134aaf6fcd3",
+  "messageId": "04ff5e8c-9a6f-4c3d-93ce-4582f9036957",
   "messageClass": "Command",
-  "messageType": "MetadataCreate",
+  "messageType": "MetadataDelete",
   "returnAddress": "string",
   "messageTimings": {
     "publishedTimestamp": "2004-08-01T10:00:00-00:00",
     "expirationTimestamp": "2004-08-01T10:00:00-00:00"
   },
   "messageSequence": {
-    "sequence": "5496f6d4-c193-4145-9789-06b8706eee2a",
+    "sequence": "d01fbd62-5270-45d0-bbd7-20c3ba183041",
     "position": 1,
     "total": 1
   },
@@ -20,8 +20,6 @@
     }
   ],
   "version": "4.0.0",
-  "errorCode": "GENERR001",
-  "errorDescription": "string",
   "generator": "string", 
   "tenantJiscID": 1
 }
