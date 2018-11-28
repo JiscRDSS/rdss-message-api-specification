@@ -1,7 +1,7 @@
 {
   "messageId": "a4f49df4-3fc3-4d71-8b92-8040a7144208",
   "correlationId": "4501437a-ce95-4372-be5c-277cb6a826eb",
-  "messageClass": "Command",
+  "messageClass": "Document",
   "messageType": "MetadataRead",
   "returnAddress": "string",
   "messageTimings": {

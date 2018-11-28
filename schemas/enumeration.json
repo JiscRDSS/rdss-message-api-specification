@@ -127,7 +127,7 @@
     "PersonIdentifierType": {
       "enum": [
         "ORCID",
-        "researcherId"
+        "researcherID"
       ]
     },
     "PersonRole": {

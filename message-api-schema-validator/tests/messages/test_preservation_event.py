@@ -1,5 +1,7 @@
+from ..test_helpers import load_json, valid_against_schema, invalid_against_schema
 
-def test_preservation_event_information_package_body_is_valid(load_json, valid_against_schema):
+
+def test_preservation_event_information_package_body_is_valid():
     message = {
         'messageHeader': load_json(
             '../messages/header/preservation_event_header.json'
@@ -14,7 +16,7 @@ def test_preservation_event_information_package_body_is_valid(load_json, valid_a
     )
 
 
-def test_preservation_event_research_object_body_is_invalid(load_json, invalid_against_schema):
+def test_preservation_event_research_object_body_is_invalid():
     message = {
         'messageHeader': load_json(
             '../messages/header/preservation_event_header.json'

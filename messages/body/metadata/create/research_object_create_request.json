@@ -71,7 +71,6 @@
     "A free text string"
   ],
   "objectResourceType": "report",
-  "objectResourceType": "article",
   "objectValue": "normal",
   "objectIdentifier": [
     {
