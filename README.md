@@ -33,8 +33,8 @@ Including application developers and vendors responsible for delivering code and
 
 #### Versioning
 
-- Specification version:&nbsp;&nbsp;`3.0.3-SNAPSHOT`
-- Data model version:&nbsp;&nbsp;&nbsp; [`3.0.0`](https://github.com/JiscRDSS/rdss-canonical-data-model/tree/3.0.0)
+- Specification version:&nbsp;&nbsp;`4.0.0`
+- Data model version:&nbsp;&nbsp;&nbsp; [`4.0.0`](https://github.com/JiscRDSS/Canonical-data-model/tree/4.0.0)
 
 Releases of this specification can be found under [Releases](https://github.com/JiscRDSS/rdss-message-api-docs/releases). Vendors **MUST** implement against a release - all other branches are considered in a constant state of flux and **MAY** change at any time.
 
@@ -310,7 +310,7 @@ The following JSON schemas are provided as part of this project, which fully des
 
 - Enumerations and types used across schemas in this repository are found in the following schemas:
   - [`schemas/enumeration.json`](schemas/enumeration.json) 
-  - [`schemas/enumeration.json`](schemas/types.json) 
+  - [`schemas/types.json`](schemas/types.json) 
 
 The schemas can be used to assist in development and validation of JSON objects that represent payloads, which are described in this API. Additionally, they are also used within the [`message-api-schema-validator/`](message-api-schema-validator/) tool, which validates the example payload JSON objects described in the [`messages/body/`](messages/body/) folder.
 
@@ -327,7 +327,6 @@ The following example Message payloads are provided in the [`messages/body/`](me
 | `MetadataUpdate`   | [`schemas/message/metadata/update_request.json`](schemas/message/metadata/update_request.json) | |
 | `MetadataDelete`   | [`schemas/message/metadata/delete_request.json`](schemas/message/metadata/delete_request.json) | |
 | `PreservationEvent`   | [`schemas/message/preservation/preservation_event_request.json`](schemas/message/metadata/preservation_event_request.json) | |
-| \
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
@@ -337,7 +336,7 @@ The following section applies to the management of digital objects, which form t
 
 ### Digital Object Identification
 
-Every digital object published by a producer **MUST** contain a unique `objectUuid` field. This field uniquely identifies a specific digital object under a specific version, and **MUST NOT** be duplicated when publishing subsequent versions of the same digital object.
+Every digital object published by a producer **MUST** contain a unique `objectUUID` field. This field uniquely identifies a specific digital object under a specific version, and **MUST NOT** be duplicated when publishing subsequent versions of the same digital object.
 
 ### Digital Object Versioning
 
@@ -351,7 +350,7 @@ It is the decision of to the consuming application to decide what constitutes a 
 - A modification to any part of a file or its associated metadata, such that the modification would cause a different checksum to be generated for that file.
 - A modification to a collection of files or its associated metadata, even if that modifies simply reorders existing files.
 
-In order to communicate a new version of a digital object to consuming applications, the producer **MUST** utilise the `objectRelatedIdentifier` field of the payload, with a relationship type of `isNewVersionOf` and a reference to the previous versions `objectUuid` value.
+In order to communicate a new version of a digital object to consuming applications, the producer **MUST** utilise the `objectRelatedIdentifier` field of the payload, with a relationship type of `isNewVersionOf` and a reference to the previous versions `objectUUID` value.
 
 When republishing a previously published digital object, a producer **MAY** also choose to utilise the `objectRelatedIdentifier` field with a relationship type of `isPreviousVersionOf`. This functionality may be used by consumers who underwent an outage, and are attempting to "catch up" with missed Messages.
 
@@ -389,19 +388,19 @@ The section is split into subsections, depending on the _type_ of application wh
 
 ### Institutional Repositories
 
-Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, an IR **MUST** either create a work or item using the metadata contained within the payload, or update an existing work or item by applying the modified fields within the payload, respectively.
+Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, an institutional repository **MUST** either create a work or item using the metadata contained within the payload, or update an existing work or item by applying the modified fields within the payload, respectively.
 
 It is possible for a metadata payload to contain no files. This is known as a "metadata only" record, and a work or item **MUST** still be created using the values contained within the payload.
 
-Upon receiving a `MetadataDelete` payload, an IR **MUST** remove the visibility of that work or item from the view of regular users.
+Upon receiving a `MetadataDelete` payload, an institutional repository **MUST** remove the visibility of that work or item from the view of regular users.
 
-To achieve this, it is **RECOMMENDED** that the metadata represented by the payload and its associated files are completely removed from the IR, however it is understood that this is not always feasible and potentially contrary to the purpose of the repository.
+To achieve this, it is **RECOMMENDED** that the metadata represented by the payload and its associated files are completely removed from the institutional repository, however it is understood that this is not always feasible and potentially contrary to the purpose of the repository.
 
 ### Preservation Systems
 
-Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, a PS **MUST** generate a preservation item which contains both the metadata contained within the payload and any files referenced by that metadata.
+Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, a preservation system **MUST** generate a preservation item which contains both the metadata contained within the payload and any files referenced by that metadata.
 
-`MetadataDelete` payloads **SHOULD** be ignored by PS's, however a PS **MAY** apply a flag or marker to the preserved object in order to indicate that a delete was requested for that particular object.
+`MetadataDelete` payloads **SHOULD** be ignored by preservation systems, however a preservation system **MAY** apply a flag or marker to the preserved object in order to indicate that a delete was requested for that particular object.
 
 ## File Download Behaviour
 
@@ -470,7 +469,7 @@ A Message that is to be routed to the Invalid Message Queue must be decorated wi
 
 ### General Error Codes
 
-The following tables describes the error codes that **MUST** be utilised when a Message is moved to either the [Error Message Queue](#error-message-queue) and the [Invalid Message Queue](#invalid-message-queue), and in all [Logging](#logging) entries that describe an error:
+The following tables describes the error codes that **MUST** be utilised when a Message is moved to either the [Error Message Queue](#error-message-queue) and the [Invalid Message Queue](#invalid-message-queue), and in all log entries that describe an error:
 
 | Error Code  | Description                                                                                                  |
 |-------------|--------------------------------------------------------------------------------------------------------------|
