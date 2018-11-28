@@ -17,7 +17,7 @@
     {
       "machineId": "string",
       "machineAddress": "fd1e:9f02:b2a0:5067:ffff:ffff:ffff:ffff",
-      "timestamp": "2004-08-01T10:00:00"
+      "timestamp": "2004-08-01T10:00:00-00:00"
     }
   ],
   "version": "4.0.0",

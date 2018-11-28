@@ -1,8 +1,8 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/message/preservation/create_request.json/#",
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/preservation/preservation_event_request.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "PreservationCreateRequest": {
+    "PreservationEventRequest": {
       "type": "object",
       "properties": {
         "messageHeader": {

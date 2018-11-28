@@ -1,5 +1,5 @@
 
-def test_preservation_create_information_package_body_is_valid(load_json, valid_against_schema):
+def test_preservation_event_information_package_body_is_valid(load_json, valid_against_schema):
     message = {
         'messageHeader': load_json(
             '../messages/header/header.json'
@@ -9,12 +9,12 @@ def test_preservation_create_information_package_body_is_valid(load_json, valid_
         )
     }
     valid_against_schema(
-        'https://www.jisc.ac.uk/rdss/schema/message/preservation/create_request.json/#/definitions/PreservationCreateRequest',
+        'https://www.jisc.ac.uk/rdss/schema/message/preservation/preservation_event_request.json/#/definitions/PreservationEventRequest',
         message
     )
 
 
-def test_preservation_create_research_object_body_is_invalid(load_json, invalid_against_schema):
+def test_preservation_event_research_object_body_is_invalid(load_json, invalid_against_schema):
     message = {
         'messageHeader': load_json(
             '../messages/header/header.json'
@@ -24,6 +24,6 @@ def test_preservation_create_research_object_body_is_invalid(load_json, invalid_
         )
     }
     invalid_against_schema(
-        'https://www.jisc.ac.uk/rdss/schema/message/preservation/create_request.json/#/definitions/PreservationCreateRequest',
+        'https://www.jisc.ac.uk/rdss/schema/message/preservation/preservation_event_request.json/#/definitions/PreservationEventRequest',
         message
     )
