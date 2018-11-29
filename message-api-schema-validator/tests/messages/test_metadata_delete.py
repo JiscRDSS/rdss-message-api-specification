@@ -1,5 +1,6 @@
 from ..test_helpers import load_json, valid_against_schema, invalid_against_schema
 
+
 def test_metadata_delete_request_is_valid():
     message = {
         'messageHeader': load_json(
@@ -14,6 +15,7 @@ def test_metadata_delete_request_is_valid():
         message
     )
 
+
 def test_metadata_delete_request_with_research_object_body_is_invalid():
     message = {
         'messageHeader': load_json(
@@ -27,4 +29,3 @@ def test_metadata_delete_request_with_research_object_body_is_invalid():
         'https://www.jisc.ac.uk/rdss/schema/message/metadata/delete_request.json/#/definitions/MetadataDeleteRequest',
         message
     )
-
