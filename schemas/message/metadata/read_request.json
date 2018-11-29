@@ -5,12 +5,25 @@
     "MetadataReadRequest": {
       "type": "object",
       "properties": {
-        "objectUUID": {
-          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
-        }
+        "messageHeader": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header"
+        },
+        "messageBody": {
+          "type": "object",
+          "properties": {
+            "objectUUID": {
+              "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+            }
+          },
+          "required": [
+            "objectUUID"
+          ],
+          "additionalProperties": false
+          }
       },
       "required": [
-        "objectUUID"
+        "messageHeader",
+        "messageBody"
       ],
       "additionalProperties": false
     }

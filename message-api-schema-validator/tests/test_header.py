@@ -15,10 +15,17 @@ def test_metadata_update_header_is_valid():
     )
 
 
-def test_metadata_read_header_is_valid():
+def test_metadata_read_request_header_is_valid():
     valid_file_against_schema(
         'https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header',
-        '../messages/header/metadata_read_header.json'
+        '../messages/header/metadata_read_request_header.json'
+    )
+
+
+def test_metadata_read_response_header_is_valid():
+    valid_file_against_schema(
+        'https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header',
+        '../messages/header/metadata_read_response_header.json'
     )
 
 

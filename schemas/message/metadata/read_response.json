@@ -3,12 +3,25 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "MetadataReadResponse": {
-      "anyOf": [
-        {"$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/ResearchObject"},
-        {"$ref": "https://www.jisc.ac.uk/rdss/schema/dataset.json/#/definitions/Dataset"},
-        {"$ref": "https://www.jisc.ac.uk/rdss/schema/article.json/#/definitions/Article"},
-        {"$ref": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#/definitions/ThesisDissertation"}
-      ]
+      "type": "object",
+      "properties": {
+        "messageHeader": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header"
+        },
+        "messageBody": {
+          "anyOf": [
+            {"$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/ResearchObject"},
+            {"$ref": "https://www.jisc.ac.uk/rdss/schema/dataset.json/#/definitions/Dataset"},
+            {"$ref": "https://www.jisc.ac.uk/rdss/schema/article.json/#/definitions/Article"},
+            {"$ref": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#/definitions/ThesisDissertation"}
+          ]
+        }
+      },
+      "required": [
+        "messageHeader",
+        "messageBody"
+      ],
+      "additionalProperties": false
     }
   }
 }
