@@ -320,13 +320,13 @@ Currently, all JSON schemas IDs (including `$ref` declarations within the schema
 
 The following example Message payloads are provided in the [`messages/body/`](messages/body/) folder:
 
-| **MessageType** | **Documentation** | **Request Schema** | **Response Schema** |
+| **MessageType** | **Documentation** | **Schemas** |
 |-|-|-|
-| `MetadataCreate` | [`MetadataCreate README`](messages/metadata/create/README.md) | [`schemas/message/metadata/create_request.json`](schemas/message/metadata/create_request.json) | |
-| `MetadataRead` | [`MetadataRead README`](messages/metadata/read/README.md) | [`schemas/message/metadata/read_request.json`](schemas/message/metadata/read_request.json) | [`schemas/message/metadata/read_response.json`](schemas/message/metadata/read_response.json) | 
-| `MetadataUpdate` |[`MetadataUpdate README`](messages/metadata/update/README.md) | [`schemas/message/metadata/update_request.json`](schemas/message/metadata/update_request.json) | |
-| `MetadataDelete` |[`MetadataDelete README`](messages/metadata/delete/README.md) | [`schemas/message/metadata/delete_request.json`](schemas/message/metadata/delete_request.json) | |
-| `PreservationEvent` |[`PreservationEvent README`](messages/preservation/README.md) | [`schemas/message/preservation/preservation_event_request.json`](schemas/message/metadata/preservation_event_request.json) | |
+| `MetadataCreate` | [`MetadataCreate README`](messages/body/metadata/create/README.md) | [`create_request.json`](schemas/message/metadata/create_request.json) |
+| `MetadataRead` | [`MetadataRead README`](messages/body/metadata/read/README.md) | [`read_request.json`](schemas/message/metadata/read_request.json) [`read_response.json`](schemas/message/metadata/read_response.json) | 
+| `MetadataUpdate` |[`MetadataUpdate README`](messages/body/metadata/update/README.md) | [`update_request.json`](schemas/message/metadata/update_request.json) | |
+| `MetadataDelete` |[`MetadataDelete README`](messages/body/metadata/delete/README.md) | [`delete_request.json`](schemas/message/metadata/delete_request.json) | |
+| `PreservationEvent` |[`PreservationEvent README`](messages/body/preservation/README.md) | [`preservation_event_request.json`](schemas/message/metadata/preservation_event_request.json) | |
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
