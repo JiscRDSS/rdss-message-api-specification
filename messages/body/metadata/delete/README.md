@@ -3,7 +3,7 @@
 Message Type: `MetadataDelete`.
 Message Class: `Command`.
 
-Describes a JSON payload of metadata of a [ResearchObject](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Canonical-data-model.mdj), [Article](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Article-content-model.mdj), [Dataset](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Dataset-content-model.mdj) or [Thesis](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Thesis-content-model.mdj) that is generated during a `CREATE` operation.
+Describes a JSON payload of metadata of a [ResearchObject](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Canonical-data-model.mdj), [Article](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Article-content-model.mdj), [Dataset](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Dataset-content-model.mdj) or [Thesis](https://github.com/JiscRDSS/Canonical-data-model/blob/4.0.0/Data-Model/Content-Models/Thesis-content-model.mdj) that is generated during a `DELETE` operation.
 
 ## Scenarios
 

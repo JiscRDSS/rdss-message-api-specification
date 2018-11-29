@@ -1,0 +1,18 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/metadata/delete_request.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "MetadataDeleteRequest": {
+      "type": "object",
+      "properties": {
+        "objectUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        }
+      },
+      "required": [
+        "objectUUID"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

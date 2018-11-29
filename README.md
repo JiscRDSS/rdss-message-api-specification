@@ -326,7 +326,7 @@ The following example Message payloads are provided in the [`messages/body/`](me
 | `MetadataRead` | [`MetadataRead README`](messages/body/metadata/read/README.md) | [`read_request.json`](schemas/message/metadata/read_request.json) [`read_response.json`](schemas/message/metadata/read_response.json) | 
 | `MetadataUpdate` |[`MetadataUpdate README`](messages/body/metadata/update/README.md) | [`update_request.json`](schemas/message/metadata/update_request.json) | |
 | `MetadataDelete` |[`MetadataDelete README`](messages/body/metadata/delete/README.md) | [`delete_request.json`](schemas/message/metadata/delete_request.json) | |
-| `PreservationEvent` |[`PreservationEvent README`](messages/body/preservation/README.md) | [`preservation_event_request.json`](schemas/message/metadata/preservation_event_request.json) | |
+| `PreservationEvent` |[`PreservationEvent README`](messages/body/preservation/README.md) | [`preservation_event_request.json`](schemas/message/preservation/preservation_event_request.json) | |
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
