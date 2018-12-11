@@ -1,8 +1,8 @@
 {
   "id": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#",
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
-    "accessType": {
+    "AccessType": {
       "enum": [
         "open",
         "safeguarded",
@@ -11,19 +11,20 @@
         "closed"
       ]
     },
-    "checksumType": {
+    "ChecksumType": {
       "enum": [
         "md5",
         "sha256"
       ]
     },
-    "dateType": {
+    "DateType": {
       "enum": [
         "accepted",
         "approved",
         "available",
-        "copyrighted",
+        "awarded",
         "collected",
+        "copyrighted",
         "created",
         "issued",
         "modified",
@@ -31,7 +32,7 @@
         "published"
       ]
     },
-    "fileUse": {
+    "FileUse": {
       "enum": [
         "originalFile",
         "thumbnailImage",
@@ -42,7 +43,7 @@
         "transcript"
       ]
     },
-    "identifierType": {
+    "IdentifierType": {
       "enum": [
         "ARK",
         "arXiv",
@@ -62,51 +63,54 @@
         "SourceID",
         "UPC",
         "URL",
-        "URN"
+        "URN",
+        "UUID"
       ]
     },
-    "messageClass": {
+    "MessageClass": {
       "enum": [
         "Command",
         "Event",
         "Document"
       ]
     },
-    "messageType": {
+    "MessageType": {
       "enum": [
         "MetadataCreate",
         "MetadataUpdate",
         "MetadataDelete",
         "MetadataRead",
-        "VocabularyRead",
-        "VocabularyPatch"
+        "PreservationEvent"
       ]
     },
-    "objectValue": {
+    "ObjectValue": {
       "enum": [
         "normal",
         "high",
         "veryHigh"
       ]
     },
-    "organisationRole": {
+    "OrganisationRole": {
       "enum": [
+        "advocacy",
+        "author",
+        "awardingInstitution",
+        "distributor",
         "funder",
         "hostingInstitution",
-        "rightsHolder",
-        "sponsor",
         "publisher",
         "registrationAgency",
         "registrationAuthority",
-        "distributor",
-        "advocacy",
-        "author"
+        "rightsHolder",
+        "sponsor"
       ]
     },
-    "organisationType": {
+    "OrganisationType": {
       "enum": [
+        "billing",
         "charity",
         "commercial",
+        "display",
         "funder",
         "furtherEducation",
         "government",
@@ -117,44 +121,44 @@
         "professionalBody",
         "research",
         "school",
-        "skills",
-        "billing",
-        "display"
+        "skills"
       ]
     },
-    "personIdentifierType": {
+    "PersonIdentifierType": {
       "enum": [
         "ORCID",
-        "researcherId"
+        "researcherID"
       ]
     },
-    "personRole": {
+    "PersonRole": {
       "enum": [
         "administrator",
+        "author",
         "contactPerson",
         "dataAnalyser",
         "dataCollector",
         "dataCreator",
         "dataManager",
+        "depositingUser",
         "editor",
         "investigator",
+        "other",
         "producer",
         "projectLeader",
-        "publisher",
         "projectMember",
+        "publisher",
         "relatedPerson",
         "researcher",
         "researcherGroup",
         "rightsHolder",
         "sponsor",
-        "supervisor",
-        "other",
-        "author",
-        "depositingUser"
+        "supervisor"
       ]
     },
-    "preservationEventType": {
+    "PreservationEventType": {
       "enum": [
+        "accession",
+        "appraisal",
         "capture",
         "compression",
         "creation",
@@ -162,61 +166,84 @@
         "decompression",
         "decryption",
         "deletion",
+        "digitalSignatureGeneration",
         "digitalSignatureValidation",
-        "download",
+        "dissemination",
+        "encryption",
+        "filenameChange",
         "fixityCheck",
+        "forensicFeatureAnalysis",
+        "formatIdentification",
+        "imaging",
+        "informationPackageCreation",
+        "informationPackageMerging",
+        "informationPackageSplitting",
         "ingestion",
+        "ingestionEnd",
+        "ingestionStart",
         "messageDigestCalculation",
+        "metadataExtraction",
+        "metadataModification",
         "migration",
-        "normalisation",
+        "modification",
+        "normalization",
+        "packing",
+        "policyAssignment",
+        "quarantine",
+        "recovery",
+        "redaction",
+        "refreshment",
         "replication",
-        "update",
+        "transfer",
+        "unpacking",
+        "unquarantine",
         "validation",
         "virusCheck"
       ]
     },
-    "relationType": {
+    "RelationType": {
       "enum": [
-        "cites",
-        "isCitedBy",
-        "isSupplementTo",
-        "isSupplementedBy",
-        "continues",
-        "isContinuedBy",
-        "hasMetadata",
-        "isMetadataFor",
-        "isNewVersionOf",
-        "isPreviousVersionOf",
-        "isPartOf",
-        "hasPart",
-        "isReferencedBy",
-        "references",
-        "isDocumentedBy",
-        "documents",
-        "isCompiledBy",
-        "compiles",
-        "isVariantFormOf",
-        "isOriginalFormOf",
-        "isIdenticalTo",
-        "isReviewedBy",
-        "reviews",
-        "isDerivedFrom",
-        "isSourceOf",
-        "isCommentOn",
-        "hasComment",
-        "isReplyTo",
-        "hasReply",
         "basedOnData",
+        "cites",
+        "compiles",
+        "continues",
+        "documents",
+        "hasComment",
+        "hasMetadata",
+        "hasParent",
+        "hasPart",
         "hasRelatedMaterial",
+        "hasReply",
+        "isAIPOf",
         "isBasedOn",
         "isBasisFor",
-        "requires",
+        "isCitedBy",
+        "isCommentOn",
+        "isCompiledBy",
+        "isContinuedBy",
+        "isDerivedFrom",
+        "isDocumentedBy",
+        "isIdenticalTo",
+        "isMetadataFor",
+        "isNewVersionOf",
+        "isOriginalFormOf",
+        "isParentOf",
+        "isPartOf",
+        "isPreviousVersionOf",
+        "isReferencedBy",
+        "isReplyTo",
         "isRequiredBy",
-        "hasParent",
-        "isParentOf"
+        "isReviewedBy",
+        "isSourceOf",
+        "isSupplementedBy",
+        "isSupplementTo",
+        "isVariantFormOf",
+        "references",
+        "requires",
+        "reviews"
       ]
     },
-    "resourceType": {
+    "ResourceType": {
       "enum": [
         "artDesignItem",
         "article",
@@ -227,7 +254,7 @@
         "dataset",
         "examPaper",
         "image",
-        "journal",
+        "informationPackage",
         "learningObject",
         "movingImage",
         "musicComposition",
@@ -243,28 +270,73 @@
         "thesisDissertation",
         "unknown",
         "website",
-        "workflow",
-        "equipment"
+        "workflow"
       ]
     },
-    "storageStatus": {
+    "StorageStatus": {
       "enum": [
         "online",
         "nearline",
         "offline"
       ]
     },
-    "storageType": {
+    "StorageType": {
       "enum": [
         "S3",
         "HTTP"
       ]
     },
-    "uploadStatus": {
+    "UploadStatus": {
       "enum": [
         "uploadStarted",
         "uploadComplete",
         "uploadAborted"
+      ]
+    },
+    "DescriptionType": {
+      "enum": [
+        "abstract", 
+        "description", 
+        "methods", 
+        "seriesInformation",
+        "tableOfContents",
+        "technicalInfo",
+        "other" 
+      ]
+    },
+    "RIOXXTermsAPC": {
+      "enum": [
+        "paid",
+        "partiallyWaived",
+        "fullyWaived",
+        "notCharged",
+        "notRequired",
+        "unknown"
+      ]
+    },
+    "PublicationVersion": {
+      "enum": [
+        "AO",
+        "SMUR",
+        "AM",
+        "P",
+        "VoR",
+        "CVoR",
+        "EVoR",
+        "NA"
+      ]
+    },
+    "ContainerType": {
+      "enum": [
+        "zip",
+        "none"
+      ]
+    },
+    "PackageType": {
+      "enum": [
+        "AIP",
+        "DIP",
+        "SIP"
       ]
     }
   }

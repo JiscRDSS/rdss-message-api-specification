@@ -1,0 +1,26 @@
+{
+  "messageId": "a4f49df4-3fc3-4d71-8b92-8040a7144208",
+  "correlationId": "4501437a-ce95-4372-be5c-277cb6a826eb",
+  "messageClass": "Command",
+  "messageType": "MetadataRead",
+  "returnAddress": "string",
+  "messageTimings": {
+    "publishedTimestamp": "2004-08-01T10:00:00Z",
+    "expirationTimestamp": "2004-08-01T10:00:00Z"
+  },
+  "messageSequence": {
+    "sequence": "570e54de-ddeb-47a9-b629-2a1ec2f85726",
+    "position": 1,
+    "total": 1
+  },
+  "messageHistory": [
+    {
+      "machineId": "string",
+      "machineAddress": "fd1e:9f02:b2a0:5067:ffff:ffff:ffff:ffff",
+      "timestamp": "2004-08-01T10:00:00Z"
+    }
+  ],
+  "version": "4.0.0",
+  "generator": "string", 
+  "tenantJiscID": 1
+}

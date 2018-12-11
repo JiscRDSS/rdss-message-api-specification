@@ -1,0 +1,120 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "Header": {
+      "type": "object",
+      "properties": {
+        "messageId": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "correlationId": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "messageClass": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageClass"
+        },
+        "messageType": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/MessageType"
+        },
+        "returnAddress": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "messageTimings": {
+          "$ref": "#/definitions/messageTimings"
+        },
+        "messageSequence": {
+          "$ref": "#/definitions/messageSequence"
+        },
+        "messageHistory": {
+          "$ref": "#/definitions/messageHistory"
+        },
+        "version": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/SemVer"
+        },
+        "errorCode": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "errorDescription": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "generator": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "tenantJiscID": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "messageId",
+        "messageClass",
+        "messageType",
+        "messageTimings",
+        "messageSequence",
+        "version",
+        "generator",
+        "tenantJiscID"
+      ],
+      "additionalProperties": false
+    },
+    "messageTimings": {
+      "type": "object",
+      "properties": {
+        "publishedTimestamp": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        },
+        "expirationTimestamp": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        }
+      },
+      "required": [
+        "publishedTimestamp"
+      ],
+      "additionalProperties": false
+    },
+    "messageSequence": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "position": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sequence",
+        "position",
+        "total"
+      ],
+      "additionalProperties": false
+    },
+    "messageHistory": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "properties": {
+          "machineId": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          },
+          "machineAddress": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/IpOrHostname"
+          },
+          "timestamp": {
+           "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+          }
+        },
+        "required": [
+          "machineId",
+          "machineAddress",
+          "timestamp"
+        ],
+        "additionalProperties": false
+      }
+    }
+  }
+}

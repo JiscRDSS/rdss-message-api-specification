@@ -1,0 +1,22 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/preservation/preservation_event_request.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "PreservationEventRequest": {
+      "type": "object",
+      "properties": {
+        "messageHeader": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header"
+        },
+        "messageBody": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/information_package.json/#/definitions/InformationPackage"
+        }
+      },
+      "required": [
+        "messageHeader",
+        "messageBody"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

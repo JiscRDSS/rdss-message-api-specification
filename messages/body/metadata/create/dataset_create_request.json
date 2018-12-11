@@ -1,0 +1,200 @@
+{
+  "objectUUID": "5680e8e0-28a5-4b20-948e-fd0d08781e0b",
+  "objectTitle": "A free text string",
+  "objectPersonRole": [
+    {
+      "person": {
+        "personUUID": "27811a4c-9cb5-4e6d-a069-5c19288fae58",
+        "personIdentifier": [
+          {
+            "personIdentifierValue": "A free text string",
+            "personIdentifierType": "ORCID"
+          }
+        ],
+        "personHonorificPrefix": "A free text string",
+        "personGivenNames": "A free text string",
+        "personFamilyNames": "A free text string",
+        "personHonorificSuffix": "A free text string",
+        "personMail": "person@net",
+        "personOrganisationUnit": {
+          "organisationUnitUUID": "28be7f16-0e70-461f-a2db-d9d7c64a8f17",
+          "organisationUnitName": "A free text string",
+          "organisation": {
+            "organisationJiscId": 1,
+            "organisationName": "A free text string",
+            "organisationType": "higherEducation",
+            "organisationAddress": "A free text string"
+          }
+        }
+      },
+      "role": "author"
+    }
+  ],
+  "objectDescription": [
+    {
+      "descriptionValue": "A free text string", 
+      "descriptionType": "abstract"
+    }
+  ],
+  "objectRights": {
+    "rightsStatement": [
+      "A free text string"
+    ],
+    "rightsHolder": [
+      "A free text string"
+    ],
+    "licence": [
+      {
+        "licenceName": "A free text string",
+        "licenceIdentifier": "A free text string",
+        "licenseStartDate": "2018-01-01T00:00:00-00:00",
+        "licenseEndDate": "2018-12-31T23:59:59-00:00"
+      }
+    ],
+    "access": [
+      {
+        "accessType": "open",
+        "accessStatement": "A free text string"
+      }
+    ]
+  },
+  "objectDate": [
+    {
+      "dateValue": "2002-10-02T10:00:00-05:00",
+      "dateType": "accepted"
+    }
+  ],
+  "objectKeyword": [
+    "A free text string"
+  ],
+  "objectCategory": [
+    "A free text string"
+  ],
+  "objectResourceType": "dataset",
+  "objectValue": "normal",
+  "objectIdentifier": [
+    {
+      "identifierValue": "A free text string",
+      "identifierType": "URL"
+    }
+  ],
+  "objectRelatedIdentifier": [
+    {
+      "identifier": {
+        "identifierValue": "A free text string",
+        "identifierType": "DOI"
+      },
+      "relationType": "cites"
+    }
+  ],
+  "objectOrganisationRole": [
+    {
+      "organisation": {
+        "organisationJiscId": 1,
+        "organisationName": "A free text string",
+        "organisationType": "higherEducation",
+        "organisationAddress": "A free text string"
+      },
+      "role": "hostingInstitution"
+    }
+  ],
+  "objectFile": [
+    {
+      "fileUUID": "e150c4ab-0370-4e5a-8722-7fb3369b7017",
+      "fileIdentifier": "A free text string",
+      "fileName": "A free text string",
+      "fileSize": 1,
+      "fileLabel": "A free text string",
+      "fileDateCreated": "2002-10-02T10:00:00-05:00",
+      "fileRights": {
+        "rightsStatement": [
+          "A free text string"
+        ],
+        "rightsHolder": [
+          "A free text string"
+        ],
+        "licence": [
+          {
+            "licenceName": "A free text string",
+            "licenceIdentifier": "A free text string",
+            "licenseStartDate": "2018-01-01T00:00:00-00:00",
+            "licenseEndDate": "2018-12-31T23:59:59-00:00"
+          }
+        ],
+        "access": [
+          {
+            "accessType": "open",
+            "accessStatement": "A free text string"
+          }
+        ]
+      },
+      "fileChecksum": [
+        {
+          "checksumUUID": "df23b46b-6b64-4a40-842f-5ad363bb6e11",
+          "checksumType": "md5",
+          "checksumValue": "A free text string"
+        }
+      ],
+      "fileFormatType": "A free text string",
+      "fileCompositionLevel": "A free text string",
+      "fileHasMimeType": true,
+      "fileDateModified": [
+        "2002-10-02T10:00:00-05:00"
+      ],
+      "filePuid": [
+        "A free text string"
+      ],
+      "fileUse": "originalFile",
+      "filePreservationEvent": "A free text string",
+      "fileUploadStatus": "uploadComplete",
+      "fileStorageStatus": "online",
+      "fileLastDownloaded": "2002-10-02T10:00:00-05:00",
+      "fileTechnicalAttribute": [
+        "A free text string"
+      ],
+      "fileStorageLocation": "https://tools.ietf.org/html/rfc3986",
+      "fileStoragePlatform": {
+        "storagePlatformUUID": "f2939501-2b2d-4e5c-9197-0daa57ccb621",
+        "storagePlatformName": "A free text string",
+        "storagePlatformType": "HTTP",
+        "storagePlatformCost": "A free text string"
+      }
+    }
+  ],
+  "coverage": {
+    "geospatialCoverage": [
+      {
+        "geolocationPoint": {
+          "latitude": 55.856016,
+          "longitude": -4.295604
+        }, 
+        "geolocationPolygon": [
+          {
+            "latitude": 54.402258, 
+            "longitude": -4.739353
+          },
+          {
+            "latitude": 56.032946, 
+            "longitude": -0.665635
+          },
+          {
+            "latitude": 61.077846, 
+            "longitude": -0.414868
+          },
+          {
+            "latitude": 57.304151, 
+            "longitude": -9.399388
+          }
+        ],
+        "geolocationPlace": "A free text string",
+        "coordinateReferenceSystem": "WGS 84"
+      }
+    ],
+    "temporalCoverageStart": "2012-06-13T00:00:00-05:00",
+    "temporalCoverageEnd": "2018-01-02T00:00:00-05:00" 
+  },
+  "language": [
+    "eng"
+  ], 
+  "version": "A free text string"
+}

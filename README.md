@@ -12,13 +12,10 @@
 - [Error Queues](#error-queues)
 - [Error Codes](#error-codes)
 - [Audit Log](#audit-log)
-- [Topology](#topology)
 - [Transactional Behaviour](#transactional-behaviour)
 - [Local Data Repository](#local-data-repository)
 - [Network Failure Behaviour](#network-failure-behaviour)
 - [Message Gateway & Channel Adaptor](#message-gateway-channel-adaptor)
-- [Logging](#logging)
-- [Non-Functional Requirements](#non-functional-requirements)
 
 ## Introduction
 
@@ -36,8 +33,8 @@ Including application developers and vendors responsible for delivering code and
 
 #### Versioning
 
-- Specification version:&nbsp;&nbsp;`3.0.2`
-- Data model version:&nbsp;&nbsp;&nbsp; [`3.0.0`](https://github.com/JiscRDSS/rdss-canonical-data-model/tree/3.0.0)
+- Specification version:&nbsp;&nbsp;`4.0.0`
+- Data model version:&nbsp;&nbsp;&nbsp; [`4.0.0`](https://github.com/JiscRDSS/Canonical-data-model/tree/4.0.0)
 
 Releases of this specification can be found under [Releases](https://github.com/JiscRDSS/rdss-message-api-docs/releases). Vendors **MUST** implement against a release - all other branches are considered in a constant state of flux and **MAY** change at any time.
 
@@ -71,8 +68,8 @@ A Message is broken into two parts:
 - The [Message Header](#message-header)
 - The [Message Body](#message-body)
 
-A complete example of a Message can be found [here](messages/example.json).
-The JSON schema for a complete message can be found [here](messages/message_schema.json)
+A complete example of a `MetadataCreate` message can be found [here](messages/example_message.json).
+The JSON schema for a complete `MetadataCreate` message can be found [here](schemas/message/metadata/create_request.json).
 
 The standard encoding for a Message is [JSON](http://www.json.org/), and the examples provided in this documentation are given in this format.
 
@@ -133,8 +130,8 @@ All email addresses provided as part of a JSON payload **MUST** be provided in [
 
 The Message Header contains important metadata describing the Message itself, including the type of Message, routing information, timings, sequencing, and so forth.
 
-An example Message Header can be found [here](messages/header/example.json).
-The JSON schema of the Message Header can be found [here](messages/header/header_schema.json).
+An example `MetadataCreate` message header can be found [here](messages/header/metadata_create_header.json).
+The JSON schema of the message header can be found [here](schemas/message/header.json).
 
 ### `messageId`
 
@@ -284,16 +281,36 @@ A free text field that clients and applications **SHOULD** populate with a meani
 
 The identifier of the application that generated the message.
 
+### `tenantJiscID`
+
+- Multiplicity:&nbsp;&nbsp;&nbsp;&nbsp;`1`
+- Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Integer`
+
+The JiscID of the institution with which the message is originating. 
+
+
 ## Message Body
 
 ### JSON Schema
 
-The following JSON schemas are provided as part of this project, which fully describe the associated [Data Model](https://github.com/JiscRDSS/rdss-canonical-data-model/tree/1.0.0):
+The following JSON schemas are provided as part of this project, which fully describe the associated [Data Model](https://github.com/JiscRDSS/Canonical-data-model/tree/4.0.0):
 
-- [`schemas/research_object.json`](schemas/research_object.json)
-- [`schemas/material_asset.json`](schemas/material_asset.json)
-- [`schemas/intellectual_asset.json`](schemas/intellectual_asset.json)
-- [`schemas/enumeration.json`](schemas/enumeration.json) - *Note that enumeration values are provided for reference only. Enumerations* ***MUST*** *be referenced using their respective ID values.*
+- The core object of the Canonical data model is the `Research Object`, which is described, along with associated objects in the following schemas:  
+  - [`schemas/research_object.json`](schemas/research_object.json)
+  - [`schemas/material_asset.json`](schemas/material_asset.json)
+  - [`schemas/intellectual_asset.json`](schemas/intellectual_asset.json)
+
+- Content models which inherit from `Research Object`, with additional associated objects unique to content models are described in the following schemas:
+  - [`schemas/article.json`](schemas/article.json)
+  - [`schemas/dataset.json`](schemas/dataset.json)
+  - [`schemas/thesis_dissertation.json`](schemas/thesis_dissertation.json)
+
+- The Information Package model is described in the following schema: 
+  - [`schemas/information_package.json`](schemas/information_package.json)
+
+- Enumerations and types used across schemas in this repository are found in the following schemas:
+  - [`schemas/enumeration.json`](schemas/enumeration.json) 
+  - [`schemas/types.json`](schemas/types.json) 
 
 The schemas can be used to assist in development and validation of JSON objects that represent payloads, which are described in this API. Additionally, they are also used within the [`message-api-schema-validator/`](message-api-schema-validator/) tool, which validates the example payload JSON objects described in the [`messages/body/`](messages/body/) folder.
 
@@ -303,13 +320,13 @@ Currently, all JSON schemas IDs (including `$ref` declarations within the schema
 
 The following example Message payloads are provided in the [`messages/body/`](messages/body/) folder:
 
-|            | **Vocabulary**                                                                                              | **Metadata**                                                                                                |
-|------------|-------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Read**   | Message Type:   `VocabularyRead`<br>Documentation: [`messages/body/vocabulary/read/`](messages/body/vocabulary/read/) | Message Type: `MetadataRead`<br>Documentation: [`messages/body/metadata/read/`](messages/body/metadata/read/)             |
-| **Create** | Not Supported                                                                                               | Message Type:   `MetadataCreate`<br>Documentation: [`messages/body/metadata/create/`](messages/body/metadata/create/) |
-| **Update** | Not Supported                                                                                               | Message Type: `MetadataUpdate`<br>Documentation: [`messages/body/metadata/update/`](messages/body/metadata/update/)       |
-| **Patch**  | Message Type: `VocabularyPatch`<br>Documentation: [`messages/body/vocabulary/patch/`](messages/body/vocabulary/patch/)     | Not Supported                                                                                               |
-| **Delete** | Not Supported                                                                                               | Message Type: `MetadataDelete`<br>Documentation: [`messages/body/metadata/delete/`](messages/body/metadata/delete/)       |
+| **MessageType** | **Documentation** | **Schemas** |
+|-|-|-|
+| `MetadataCreate` | [`MetadataCreate README`](messages/body/metadata/create/README.md) | [`create_request.json`](schemas/message/metadata/create_request.json) |
+| `MetadataRead` | [`MetadataRead README`](messages/body/metadata/read/README.md) | [`read_request.json`](schemas/message/metadata/read_request.json) [`read_response.json`](schemas/message/metadata/read_response.json) | 
+| `MetadataUpdate` |[`MetadataUpdate README`](messages/body/metadata/update/README.md) | [`update_request.json`](schemas/message/metadata/update_request.json) | |
+| `MetadataDelete` |[`MetadataDelete README`](messages/body/metadata/delete/README.md) | [`delete_request.json`](schemas/message/metadata/delete_request.json) | |
+| `PreservationEvent` |[`PreservationEvent README`](messages/body/preservation/README.md) | [`preservation_event_request.json`](schemas/message/preservation/preservation_event_request.json) | |
 
 In all instances where a response is required, the [`correlationId`](#correlationid) **MUST** be provided in the header of the Message and **MUST** match the [`messageId`](#messageid) provided in the original request.
 
@@ -319,7 +336,7 @@ The following section applies to the management of digital objects, which form t
 
 ### Digital Object Identification
 
-Every digital object published by a producer **MUST** contain a unique `objectUuid` field. This field uniquely identifies a specific digital object under a specific version, and **MUST NOT** be duplicated when publishing subsequent versions of the same digital object.
+Every digital object published by a producer **MUST** contain a unique `objectUUID` field. This field uniquely identifies a specific digital object under a specific version, and **MUST NOT** be duplicated when publishing subsequent versions of the same digital object.
 
 ### Digital Object Versioning
 
@@ -333,7 +350,7 @@ It is the decision of to the consuming application to decide what constitutes a 
 - A modification to any part of a file or its associated metadata, such that the modification would cause a different checksum to be generated for that file.
 - A modification to a collection of files or its associated metadata, even if that modifies simply reorders existing files.
 
-In order to communicate a new version of a digital object to consuming applications, the producer **MUST** utilise the `objectRelatedIdentifier` field of the payload, with a relationship type of `isNewVersionOf` and a reference to the previous versions `objectUuid` value.
+In order to communicate a new version of a digital object to consuming applications, the producer **MUST** utilise the `objectRelatedIdentifier` field of the payload, with a relationship type of `isNewVersionOf` and a reference to the previous versions `objectUUID` value.
 
 When republishing a previously published digital object, a producer **MAY** also choose to utilise the `objectRelatedIdentifier` field with a relationship type of `isPreviousVersionOf`. This functionality may be used by consumers who underwent an outage, and are attempting to "catch up" with missed Messages.
 
@@ -371,19 +388,19 @@ The section is split into subsections, depending on the _type_ of application wh
 
 ### Institutional Repositories
 
-Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, an IR **MUST** either create a work or item using the metadata contained within the payload, or update an existing work or item by applying the modified fields within the payload, respectively.
+Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, an institutional repository **MUST** either create a work or item using the metadata contained within the payload, or update an existing work or item by applying the modified fields within the payload, respectively.
 
 It is possible for a metadata payload to contain no files. This is known as a "metadata only" record, and a work or item **MUST** still be created using the values contained within the payload.
 
-Upon receiving a `MetadataDelete` payload, an IR **MUST** remove the visibility of that work or item from the view of regular users.
+Upon receiving a `MetadataDelete` payload, an institutional repository **MUST** remove the visibility of that work or item from the view of regular users.
 
-To achieve this, it is **RECOMMENDED** that the metadata represented by the payload and its associated files are completely removed from the IR, however it is understood that this is not always feasible and potentially contrary to the purpose of the repository.
+To achieve this, it is **RECOMMENDED** that the metadata represented by the payload and its associated files are completely removed from the institutional repository, however it is understood that this is not always feasible and potentially contrary to the purpose of the repository.
 
 ### Preservation Systems
 
-Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, a PS **MUST** generate a preservation item which contains both the metadata contained within the payload and any files referenced by that metadata.
+Upon receiving a `MetadataCreate` or `MetadataUpdate` payload, a preservation system **MUST** generate a preservation item which contains both the metadata contained within the payload and any files referenced by that metadata.
 
-`MetadataDelete` payloads **SHOULD** be ignored by PS's, however a PS **MAY** apply a flag or marker to the preserved object in order to indicate that a delete was requested for that particular object.
+`MetadataDelete` payloads **SHOULD** be ignored by preservation systems, however a preservation system **MAY** apply a flag or marker to the preserved object in order to indicate that a delete was requested for that particular object.
 
 ## File Download Behaviour
 
@@ -452,7 +469,7 @@ A Message that is to be routed to the Invalid Message Queue must be decorated wi
 
 ### General Error Codes
 
-The following tables describes the error codes that **MUST** be utilised when a Message is moved to either the [Error Message Queue](#error-message-queue) and the [Invalid Message Queue](#invalid-message-queue), and in all [Logging](#logging) entries that describe an error:
+The following tables describes the error codes that **MUST** be utilised when a Message is moved to either the [Error Message Queue](#error-message-queue) and the [Invalid Message Queue](#invalid-message-queue), and in all log entries that describe an error:
 
 | Error Code  | Description                                                                                                  |
 |-------------|--------------------------------------------------------------------------------------------------------------|
@@ -475,16 +492,10 @@ The following sections describe the error codes that **MUST** be utilised when a
 
 | Error Code     | Description                                                            |
 |----------------|------------------------------------------------------------------------|
-| `APPERRMET001` | Received a Metadata `UPDATE` with a `datasetUuid` that does not exist. |
-| `APPERRMET002` | Received a Metadata `DELETE` with a `datasetUuid` that does not exist. |
-| `APPERRMET003` | Received a Metadata `READ` with a `datasetUuid` that does not exist.   |
+| `APPERRMET001` | Received a Metadata `UPDATE` with a `objectUUID` that does not exist. |
+| `APPERRMET002` | Received a Metadata `DELETE` with a `objectUUID` that does not exist. |
+| `APPERRMET003` | Received a Metadata `READ` with a `objectUUID` that does not exist.   |
 | `APPERRMET004` | Received an invalid checksum for a file provided within the payload.   |
-
-#### Vocabulary Error Codes
-
-| Error Code     | Description                                                             |
-|----------------|-------------------------------------------------------------------------|
-| `APPERRVOC002` | Received a Vocabulary `READ` with a `vocabularyId` that does not exist. |
 
 ## Audit Log
 
@@ -493,28 +504,6 @@ The Audit Log is a component of the system through which every Message dispatche
 It is delivered in the form of an [AWS Kinesis Stream](https://aws.amazon.com/kinesis/streams/), which in turn loads the data into an [Amazon S3](https://aws.amazon.com/s3/) via an [AWS Lambda Function](https://aws.amazon.com/lambda/). The data is then made available for consumption and processing by other systems (e.g reporting).
 
 In order for a Message to be consumed by the Audit Log, Messages **MUST** be in serialised JSON format and **MUST NOT** exceed 1000KB.
-
-## Topology
-
-The following diagram describes the topology of the Messaging system (the diagram can be edited using [Microsoft Visio](https://products.office.com/en-gb/visio/flowchart-software). The source is provided in the [`topology/topology.vsdx`](topology/topology.vsdx) file).
-
-[Hohpe EID Stencils](http://www.enterpriseintegrationpatterns.com/downloads.html) is used in the creation of the topology diagram.
-
-|                           EIP Key                            | Description           |
-|:------------------------------------------------------------:|-----------------------|
-|     ![Directional Queue](topology/directional-queue.png)     | Directional Queue     |
-| ![Invalid Message Queue](topology/invalid-message-queue.png) | Invalid Message Queue |
-|   ![Error Message Queue](topology/error-message-queue.png)   | Error Message Queue   |
-|       ![Channel Adaptor](topology/channel-adaptor.png)       | Channel Adaptor       |
-|        ![Message Broker](topology/message-broker.png)        | Message Broker        |
-|  ![Content Based Router](topology/content-based-router.png)  | Content Based Router  |
-
-![Topology](topology/topology.png)
-_(click the diagram to view in high resolution)_
-
-- [Message Routers](http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageRouter.html) and [Channel Adaptors](http://www.enterpriseintegrationpatterns.com/patterns/messaging/ChannelAdaptor.html) are implemented as [AWS Lambda](https://aws.amazon.com/lambda/) services.
-- [Message Channels](http://www.enterpriseintegrationpatterns.com/patterns/messaging/MessageChannel.html) are implemented using [AWS Kinesis Streams](https://aws.amazon.com/kinesis/streams/).
-- Message log stores are implemented using [Amazon S3](https://aws.amazon.com/s3/).
 
 ## Transactional Behaviour
 
@@ -737,117 +726,3 @@ The alternative interface to the messaging system is the Channel Adaptor, which 
 The typical implementation of a Channel Adaptor would be a pull mechanism which periodically polls the APIs exposed by the application, probing for newly created datasets and objects.
 
 The Channel Adaptor would then convert the retrieved data to a format compatible with the messaging system (as specified by this API), before adding to the relevant queue for consumption and processing by other components and applications.
-
-## Logging
-
-All applications that interact with the messaging system, whether as a sender or receiver, **MUST** generate useful log messages for consumption by engineers and system operations staff.
-
-### Usage
-
-Log messages generated by applications must be written to the local syslog service provided by the operating system. Most Unix based operating systems provide a simple utility known as `logger` to interact with the syslog service.
-
-The following example describes how to generate the log Message examples provided in the [Log Message Format](#log-message-format) section:
-
-```sh
-logger -p local0.info -i "[INFO] Message sent"
-logger -p local0.info -i "[INFO] Message received"
-```
-
-For informational purposes, the expected format of a raw syslog log Message is described in the [Log Message Format](#log-message-format) section.
-
-### Log Message Format
-
-Log messages delivered in syslog format consist of two parts:
-
-- [Log Message Header](#log-message-header)
-- [Log Message](#log-message)
-
-Examples:
-
-```
-<134>1 2017-03-01T13:14:15.000Z machine.jisc.ac.uk msgsender-1.2.0 848221 "[INFO] Message sent."
-
-<134>1 2017-03-01T15:16:17.000Z machine.jisc.ac.uk msgreceiver-1.3.1 810038 "[INFO] Message received."
-```
-
-In this example, the [Log Message Header](#log-message-header) begins with a priority of `134`, followed by a syslog protocol version of `1`. The hostname of the originating machine is `machine.jisc.ac.uk` and the applications are `msgsender` and `msgreceiver` with versions `1.2.0` and `1.3.1` respectively. The process IDs are `848221` and `810038`. The [Log Message](#log-message) then follows.
-
-#### Log Message Header
-
-The header of a syslog log message takes the following format:
-
-```
-<PRI>VERSION TIMESTAMP HOSTNAME APP-NAME PROCID
-```
-
-##### `PRI`
-
-Describes the priority of the log message. It is derived from the numerical codes of the facility and the severity of the log message as `(FACILITY * 8) + SEVERITY`. These values are described in more detail in section [6.2.1](https://tools.ietf.org/html/rfc5424#section-6.2.1) of RFC5424.
-
-Log messages **MUST** use a facility value of between `16 - local0` and `23 - local7` inclusive (other facilities are reserved for system processes and services), and are free to use any severity value deemed appropriate for the purposes of the log message.
-
-##### `VERSION`
-
-Describes the version of the syslog protocol specification utilised by the originator. The current version is `1`.
-
-##### `TIMESTAMP`
-
-Describes the originator system time at which the log message was generated. It is given in the format of [RFC3339](https://tools.ietf.org/html/rfc3339) with the following further restrictions imposed:
-
-- The `T` and `Z` characters in this syntax **MUST** be uppercase.
-- Usage of the `T` character is **REQUIRED**.
-- Leap seconds **MUST NOT** be used.
-
-##### `HOSTNAME`
-
-Identifies the fully qualified hostname of the machine that originated the log message.
-
-##### `APP-NAME`
-
-Identifies the application that originated the message. This value **MUST** be unique to the application and **MUST** contain the version of the application.
-
-##### `PROCID`
-
-Contains the process identifier of the application on the operating system of the machine that originated the log message.
-
-#### Log Message
-
-The message itself that contains free-form text that provides information about the event that is being logged.
-
-All Messages sent and received by the application **MUST** be logged and **MUST** contain, at a minimum, the severity of the log message wrapped in square brackets (e.g. `[INFO]`) along with meaningful information relevant to the severity against which the log message is being generated.
-
-## Non-Functional Requirements
-
-The following sections describe the requirements and limitations imposed by the underlying technologies and infrastructure utilised by the messaging system. All consumers and producers of Messages in the system **MUST** ensure that they are operating within these requirements and limitations.
-
-The vast majority of technologies and infrastructure that drives the messaging system are provided by Amazon AWS, more details on the limitations imposed by AWS not described below can be found in [AWS Service Limits](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html).
-
-### Messages
-
-| Requirement  | Value  | Description                                                                                |
-|--------------|--------|--------------------------------------------------------------------------------------------|
-| Message Size | 1000KB | AWS Kinesis Firehose and AWS Kinesis Streams imposes a maximum size of 1000KB per message. |
-
-### Message Channels
-
-| Requirement  | Value                             | Description                                                                                                                                                                          |
-|--------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Time To Live | 168 hours                         | AWS Kinesis Stream has a maximum retention period of 168 hours, thereby giving our Message Channels a TTL of 168 hours.                                                              |
-| Throughput   | Per shard: 1MB/s in and 4MB/s out | Each AWS Kinesis Stream can by default support up to 50 shards in US East, ES West and EU Ireland, and 25 shards in other regions. These values can be increased with justification. |
-
-### Audit Logs & Error Message Queues
-
-| Requirement   | Value                                                  | Description                                                                                                                                                       |
-|---------------|--------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Account Limit | 20 per region                                          | A single AWS account can have a maximum of 20 AWS Kinesis Firehose delivery streams per region.                                                                   |
-| Time To Live  | 24 hours with a retry of 0 to 7200 seconds             | Should the delivery destination be unavailable, AWS Kinesis Firehose will retain records for a maximum of 24 hours and can retry delivery from 0 to 7200 seconds. |
-| Throughput    | 200 transactions/second, 5000 records/second and 5MB/s | These values can be increased with justification.                                                                                                                 |
-| Buffer        | 1MB to 128MB and 60 to 900 seconds                     | Buffer sizes can range from 1MB to 128MB with intervals of 60 to 900 seconds.                                                                                     |
-| Compression   | GZIP, ZIP and SNAPPY                                   | Data provided to the AWS Kinesis Firehose can be compressed using GZIP, ZIP and SNAPPY. However, the uncompressed size cannot exceeded 1000KB.                     |
-
-### Log Messages
-
-| Requirement    | Value      | Description                                                                                                                      |
-|----------------|------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Minimum Length | 480 bytes  | The minimum length of a log message is 480 bytes as per RFC5424.                                                                 |
-| Maximum Length | 2048 bytes | The recommended maximum length of a log message is 2048 bytes as per RFC5424, however implementations are free to increase this. |

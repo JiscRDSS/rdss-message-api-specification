@@ -1,0 +1,31 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/message/metadata/read_request.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "MetadataReadRequest": {
+      "type": "object",
+      "properties": {
+        "messageHeader": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#/definitions/Header"
+        },
+        "messageBody": {
+          "type": "object",
+          "properties": {
+            "objectUUID": {
+              "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+            }
+          },
+          "required": [
+            "objectUUID"
+          ],
+          "additionalProperties": false
+          }
+      },
+      "required": [
+        "messageHeader",
+        "messageBody"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

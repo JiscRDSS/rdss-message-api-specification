@@ -1,0 +1,166 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/thesis_dissertation.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "ThesisDissertation": {
+      "type": "object",
+      "properties": {
+        "objectUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "objectTitle": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "objectPersonRole": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/PersonRole"
+          },
+          "minItems": 1
+        },
+        "objectDescription": {
+          "type": "array", 
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Description"
+          }
+        },
+        "objectRights": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Rights"
+        },
+        "objectDate": {
+          "type": "array",
+          "uniqueItems": true,
+          "contains": {
+            "$ref": "#/definitions/ThesisAwardedDate"
+          },
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Date"
+          },
+          "minItems": 1
+        },
+        "objectKeyword": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          }
+        },
+        "objectCategory": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          }
+        },
+        "objectResourceType": {
+          "type": "string",
+          "enum": ["thesisDissertation"]
+        },
+        "objectValue": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ObjectValue"
+        },
+        "objectIdentifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/Identifier"
+          },
+          "minItems": 1
+        },
+        "objectRelatedIdentifier": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/IdentifierRelationship"
+          }
+        },
+        "objectOrganisationRole": {
+          "type": "array",
+          "uniqueItems": true,
+          "contains": {
+            "$ref": "#/definitions/AwardingInstitutionOrganisationRole"
+          },
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/research_object.json/#/definitions/OrganisationRole"
+          },
+          "minItems": 1
+        },
+        "objectFile": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#/definitions/File"
+          }
+        },
+        "coverage": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/common_entities.json/#/definitions/Coverage"
+        },
+        "language": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+          }
+        }, 
+        "qualificationLevel": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "qualificationName": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        }
+      },
+      "required": [
+        "objectUUID",
+        "objectTitle",
+        "objectPersonRole",
+        "objectDescription",
+        "objectRights",
+        "objectDate",
+        "objectResourceType",
+        "objectValue",
+        "objectIdentifier",
+        "objectOrganisationRole",
+        "language",
+        "qualificationLevel",
+        "qualificationName"
+      ],
+      "additionalProperties": false
+    },
+    "ThesisAwardedDate": {
+      "type": "object",
+      "properties": {
+        "dateValue": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/Timestamp"
+        },
+        "dateType": {
+          "type": "string",
+          "enum": ["awarded"]
+        }
+      },
+      "required": [
+        "dateValue",
+        "dateType"
+      ],
+      "additionalProperties": false
+    }, 
+    "AwardingInstitutionOrganisationRole": {
+      "type": "object",
+      "properties": {
+        "organisation": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/material_asset.json/#/definitions/Organisation"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["awardingInstitution"]
+        }
+      },
+      "required": [
+        "organisation",
+        "role"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
