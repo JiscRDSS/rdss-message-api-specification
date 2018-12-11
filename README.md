@@ -68,8 +68,8 @@ A Message is broken into two parts:
 - The [Message Header](#message-header)
 - The [Message Body](#message-body)
 
-A complete example of a Message can be found [here](messages/example.json).
-The JSON schema for a complete message can be found [here](messages/message_schema.json)
+A complete example of a `MetadataCreate` message can be found [here](messages/example_message.json).
+The JSON schema for a complete `MetadataCreate` message can be found [here](schemas/message/metadata/create_request.json).
 
 The standard encoding for a Message is [JSON](http://www.json.org/), and the examples provided in this documentation are given in this format.
 
