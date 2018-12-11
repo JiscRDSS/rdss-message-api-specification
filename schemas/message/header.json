@@ -1,5 +1,5 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#",
+  "$id": "https://www.jisc.ac.uk/rdss/schema/message/header.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "Header": {
