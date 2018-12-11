@@ -130,8 +130,8 @@ All email addresses provided as part of a JSON payload **MUST** be provided in [
 
 The Message Header contains important metadata describing the Message itself, including the type of Message, routing information, timings, sequencing, and so forth.
 
-An example Message Header can be found [here](messages/header/example.json).
-The JSON schema of the Message Header can be found [here](messages/header/header_schema.json).
+An example `MetadataCreate` message header can be found [here](messages/header/metadata_create_header.json).
+The JSON schema of the message header can be found [here](schemas/message/header.json).
 
 ### `messageId`
 
