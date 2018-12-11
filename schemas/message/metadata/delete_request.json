@@ -1,5 +1,5 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/message/metadata/delete_request.json/#",
+  "$id": "https://www.jisc.ac.uk/rdss/schema/message/metadata/delete_request.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "MetadataDeleteRequest": {

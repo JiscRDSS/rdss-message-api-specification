@@ -1,5 +1,5 @@
 {
-  "id": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#",
+  "$id": "https://www.jisc.ac.uk/rdss/schema/intellectual_asset.json/#",
   "$schema": "http://json-schema.org/draft-06/schema#",
   "definitions": {
     "File": {

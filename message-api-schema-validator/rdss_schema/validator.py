@@ -13,7 +13,7 @@ class RDSSSchemaValidator(object):
             '',
             {},
             store={
-                schema['id']: schema
+                schema['$id']: schema
                 for schema in self._schemas
             }
         )
@@ -27,12 +27,12 @@ class RDSSSchemaValidator(object):
 
     def _generate_definition_schemas(self, schema_json):
         schema = schema_json['$schema']
-        base_id = schema_json['id']
+        base_id = schema_json['$id']
         schemas = {}
         for definition in schema_json.get('definitions', {}).keys():
             full_id = base_id + '/definitions/' + definition
             definition_schema = {
-                'id': full_id,
+                '$id': full_id,
                 '$schema': schema,
                 '$ref': full_id
             }
