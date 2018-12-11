@@ -1,0 +1,25 @@
+{
+  "messageId": "04ff5e8c-9a6f-4c3d-93ce-4582f9036957",
+  "messageClass": "Command",
+  "messageType": "MetadataDelete",
+  "returnAddress": "string",
+  "messageTimings": {
+    "publishedTimestamp": "2004-08-01T10:00:00-00:00",
+    "expirationTimestamp": "2004-08-01T10:00:00-00:00"
+  },
+  "messageSequence": {
+    "sequence": "d01fbd62-5270-45d0-bbd7-20c3ba183041",
+    "position": 1,
+    "total": 1
+  },
+  "messageHistory": [
+    {
+      "machineId": "string",
+      "machineAddress": "fd1e:9f02:b2a0:5067:ffff:ffff:ffff:ffff",
+      "timestamp": "2004-08-01T10:00:00-00:00"
+    }
+  ],
+  "version": "4.0.0",
+  "generator": "string", 
+  "tenantJiscID": 1
+}

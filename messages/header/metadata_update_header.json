@@ -1,0 +1,25 @@
+{
+  "messageId": "be94a995-eecd-4cea-b572-95f5605f59f2",
+  "messageClass": "Command",
+  "messageType": "MetadataUpdate",
+  "returnAddress": "string",
+  "messageTimings": {
+    "publishedTimestamp": "2004-08-01T10:00:00+00:00",
+    "expirationTimestamp": "2004-08-01T10:00:00+00:00"
+  },
+  "messageSequence": {
+    "sequence": "ef2324ae-160e-4ac6-af4b-e4cb562d5ef8",
+    "position": 1,
+    "total": 1
+  },
+  "messageHistory": [
+    {
+      "machineId": "string",
+      "machineAddress": "fd1e:9f02:b2a0:5067:ffff:ffff:ffff:ffff",
+      "timestamp": "2004-08-01T10:00:00+00:00"
+    }
+  ],
+  "version": "4.0.0",
+  "generator": "string", 
+  "tenantJiscID": 1
+}

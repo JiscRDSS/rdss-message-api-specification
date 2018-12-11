@@ -1,5 +1,0 @@
-isodate
-jsonschema
-pre-commit
-pylint
-rfc3987

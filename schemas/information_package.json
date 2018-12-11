@@ -1,0 +1,56 @@
+{
+  "id": "https://www.jisc.ac.uk/rdss/schema/information_package.json/#",
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "definitions": {
+    "InformationPackage": {
+      "type": "object",
+      "properties": {
+        "objectUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "packageUUID": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/UUID"
+        },
+        "packageType": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PackageType"
+        },
+        "packageContainerType": {
+            "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/ContainerType"
+        },
+        "packageDescription": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "packagePreservationEvent": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/information_package.json/#/definitions/PreservationEvent"
+        }
+      },
+      "required": [
+        "objectUUID",
+        "packageUUID",
+        "packageType",
+        "packageContainerType",
+        "packagePreservationEvent"
+      ],
+      "additionalProperties": false
+    },
+    "PreservationEvent": {
+      "type": "object",
+      "properties": {
+        "preservationEventValue": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        },
+        "preservationEventType": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/enumeration.json/#/definitions/PreservationEventType"
+        },
+        "preservationEventDetail": {
+          "$ref": "https://www.jisc.ac.uk/rdss/schema/types.json/#/definitions/NonEmptyString"
+        }
+      },
+      "required": [
+        "preservationEventValue",
+        "preservationEventType"
+      ],
+      "additionalProperties": false
+    }
+  }
+}
