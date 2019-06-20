@@ -1,21 +1,22 @@
 # RDSS Message API
 
-- [Introduction](#introduction)
-- [Message Structure](#message-structure)
-- [Message Header](#message-header)
-- [Message Body](#message-body)
-- [Object Versioning](#object-versioning)
-- [Message Triggers](#message-triggers)
-- [Messaging Receiving](#messaging-receiving)
-- [File Download Behaviour](#file-download-behaviour)
-- [Multi-Message Sequence](#multi-message-sequence)
-- [Error Queues](#error-queues)
-- [Error Codes](#error-codes)
-- [Audit Log](#audit-log)
-- [Transactional Behaviour](#transactional-behaviour)
-- [Local Data Repository](#local-data-repository)
-- [Network Failure Behaviour](#network-failure-behaviour)
-- [Message Gateway & Channel Adaptor](#message-gateway-channel-adaptor)
+- [Introduction](#Introduction)
+- [Authentication](#Authentication)
+- [Message Structure](#Message-Structure)
+- [Message Header](#Message-Header)
+- [Message Body](#Message-Body)
+- [Digital Objects](#Digital-Objects)
+- [Message Triggers](#Message-Triggers)
+- [Messaging Receiving](#Messaging-Receiving)
+- [File Download Behaviour](#File-Download-Behaviour)
+- [Multi-Message Sequence](#Multi-Message-Sequence)
+- [Error Queues](#Error-Queues)
+- [Error Codes](#Error-Codes)
+- [Audit Log](#Audit-Log)
+- [Transactional Behaviour](#Transactional-Behaviour)
+- [Local Data Repository](#Local-Data-Repository)
+- [Network Failure Behaviour](#Network-Failure-Behaviour)
+- [Message Gateway & Channel Adaptor](#Message-Gateway--Channel-Adaptor)
 
 ## Introduction
 
@@ -286,7 +287,7 @@ The identifier of the application that generated the message.
 - Multiplicity:&nbsp;&nbsp;&nbsp;&nbsp;`1`
 - Type:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Integer`
 
-The JiscID of the institution with which the message is originating. 
+The JiscID of the institution with which the message is originating.
 
 
 ## Message Body
@@ -295,7 +296,7 @@ The JiscID of the institution with which the message is originating.
 
 The following JSON schemas are provided as part of this project, which fully describe the associated [Data Model](https://github.com/JiscRDSS/Canonical-data-model/tree/4.0.0):
 
-- The core object of the Canonical data model is the `Research Object`, which is described, along with associated objects in the following schemas:  
+- The core object of the Canonical data model is the `Research Object`, which is described, along with associated objects in the following schemas:
   - [`schemas/research_object.json`](schemas/research_object.json)
   - [`schemas/material_asset.json`](schemas/material_asset.json)
   - [`schemas/intellectual_asset.json`](schemas/intellectual_asset.json)
@@ -305,12 +306,12 @@ The following JSON schemas are provided as part of this project, which fully des
   - [`schemas/dataset.json`](schemas/dataset.json)
   - [`schemas/thesis_dissertation.json`](schemas/thesis_dissertation.json)
 
-- The Information Package model is described in the following schema: 
+- The Information Package model is described in the following schema:
   - [`schemas/information_package.json`](schemas/information_package.json)
 
 - Enumerations and types used across schemas in this repository are found in the following schemas:
-  - [`schemas/enumeration.json`](schemas/enumeration.json) 
-  - [`schemas/types.json`](schemas/types.json) 
+  - [`schemas/enumeration.json`](schemas/enumeration.json)
+  - [`schemas/types.json`](schemas/types.json)
 
 The schemas can be used to assist in development and validation of JSON objects that represent payloads, which are described in this API. Additionally, they are also used within the [`message-api-schema-validator/`](message-api-schema-validator/) tool, which validates the example payload JSON objects described in the [`messages/body/`](messages/body/) folder.
 
@@ -323,7 +324,7 @@ The following example Message payloads are provided in the [`messages/body/`](me
 | **MessageType** | **Documentation** | **Schemas** |
 |-|-|-|
 | `MetadataCreate` | [`MetadataCreate README`](messages/body/metadata/create/README.md) | [`create_request.json`](schemas/message/metadata/create_request.json) |
-| `MetadataRead` | [`MetadataRead README`](messages/body/metadata/read/README.md) | [`read_request.json`](schemas/message/metadata/read_request.json) [`read_response.json`](schemas/message/metadata/read_response.json) | 
+| `MetadataRead` | [`MetadataRead README`](messages/body/metadata/read/README.md) | [`read_request.json`](schemas/message/metadata/read_request.json) [`read_response.json`](schemas/message/metadata/read_response.json) |
 | `MetadataUpdate` |[`MetadataUpdate README`](messages/body/metadata/update/README.md) | [`update_request.json`](schemas/message/metadata/update_request.json) | |
 | `MetadataDelete` |[`MetadataDelete README`](messages/body/metadata/delete/README.md) | [`delete_request.json`](schemas/message/metadata/delete_request.json) | |
 | `PreservationEvent` |[`PreservationEvent README`](messages/body/preservation/README.md) | [`preservation_event_request.json`](schemas/message/preservation/preservation_event_request.json) | |
