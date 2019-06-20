@@ -11,7 +11,7 @@ Describes a JSON payload of metadata of a [ResearchObject](https://github.com/Ji
 
 ## Request
 
-- Research Object example: [`research_object_update_request.json`](research_object_create_request.json)
+- Research Object example: [`research_object_update_request.json`](research_object_update_request.json)
 - Schema: [`schemas/message/metadata/update_request.json`](../../../../schemas/message/metadata/update_request.json)
 
 (n.b. Payloads for these messages are identical in form to those for `MetadataCreate` messages, so only a `ResearchObject` payload is provided as an example.)
