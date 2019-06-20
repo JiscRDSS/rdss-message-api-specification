@@ -42,7 +42,7 @@
           "personFamilyNames": "A free text string",
           "personHonorificSuffix": "A free text string",
           "personMail": "email_address@jisc.ac.uk"
-          },
+        },
         "role": "author"
       },
       {
@@ -75,7 +75,7 @@
     ],
     "objectDescription": [
       {
-        "descriptionValue": "A free text string", 
+        "descriptionValue": "A free text string",
         "descriptionType": "description"
       }
     ],
