@@ -11,7 +11,7 @@ Describes a JSON payload of metadata of a [ResearchObject](https://github.com/Ji
 
 ## Request
 
-- Research Object example: [`research_object_delete_request.json`](research_object_create_request.json)
+- Research Object example: [`research_object_delete_request.json`](research_object_delete_request.json)
 - Schema: [`schemas/message/metadata/delete_request.json`](../../../../schemas/message/metadata/delete_request.json)
 
 (n.b. As the payload for these messages consists of the `objectUUID` of the object being deleted, an example is provided only for `ResearchObject`.)
